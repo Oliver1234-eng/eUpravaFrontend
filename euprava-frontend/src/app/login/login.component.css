@@ -1,0 +1,22 @@
+input.ng-invalid {
+    border-color: red;
+}
+  
+.required-message {
+    color: red;
+}
+
+.invalid-input {
+    border-color: red;
+}
+
+h1 {
+    color: #0066cc;
+}
+
+label {
+    color: #0066cc;
+}
+
+
+  
