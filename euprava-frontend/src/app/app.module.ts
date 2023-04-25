@@ -13,6 +13,12 @@ import { KatastarNewsComponent } from './katastar-news/katastar-news.component';
 import { KatastarProfileComponent } from './katastar-profile/katastar-profile.component';
 import { KatastarLogoutComponent } from './katastar-logout/katastar-logout.component';
 import { NewsService } from './service/NewsService';
+import { NewsOneComponent } from './katastar-news-folder/news-one/news-one.component';
+import { NewsTwoComponent } from './katastar-news-folder/news-two/news-two.component';
+import { NewsThreeComponent } from './katastar-news-folder/news-three/news-three.component';
+import { NewsFourComponent } from './katastar-news-folder/news-four/news-four.component';
+import { NewsFiveComponent } from './katastar-news-folder/news-five/news-five.component';
+import { NewsSixComponent } from './katastar-news-folder/news-six/news-six.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +29,13 @@ import { NewsService } from './service/NewsService';
     GradjaninHomeComponent,
     KatastarNewsComponent,
     KatastarProfileComponent,
-    KatastarLogoutComponent
+    KatastarLogoutComponent,
+    NewsOneComponent,
+    NewsTwoComponent,
+    NewsThreeComponent,
+    NewsFourComponent,
+    NewsFiveComponent,
+    NewsSixComponent
   ],
   imports: [
     BrowserModule,
