@@ -26,6 +26,14 @@ import { GradjaninNotarComponent } from './gradjanin-notar/gradjanin-notar.compo
 import { GradjaninKatastarComponent } from './gradjanin-katastar/gradjanin-katastar.component';
 import { MaticarHomeComponent } from './maticar-home/maticar-home.component';
 import { NotarHomeComponent } from './notar-home/notar-home.component';
+import { PronalazenjeBrojaParceleComponent } from './pronalazenje-broja-parcele/pronalazenje-broja-parcele.component';
+import { NewsOneGradjaninComponent } from './katastar-news-folder/news-one-gradjanin/news-one-gradjanin.component';
+import { NewsTwoGradjaninComponent } from './katastar-news-folder/news-two-gradjanin/news-two-gradjanin.component';
+import { NewsThreeGradjaninComponent } from './katastar-news-folder/news-three-gradjanin/news-three-gradjanin.component';
+import { NewsFourGradjaninComponent } from './katastar-news-folder/news-four-gradjanin/news-four-gradjanin.component';
+import { NewsFiveGradjaninComponent } from './katastar-news-folder/news-five-gradjanin/news-five-gradjanin.component';
+import { NewsSixGradjaninComponent } from './katastar-news-folder/news-six-gradjanin/news-six-gradjanin.component';
+import { PronalazenjeBrojaParceleGradjaninComponent } from './pronalazenje-broja-parcele-gradjanin/pronalazenje-broja-parcele-gradjanin.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +57,15 @@ import { NotarHomeComponent } from './notar-home/notar-home.component';
     GradjaninNotarComponent,
     GradjaninKatastarComponent,
     MaticarHomeComponent,
-    NotarHomeComponent
+    NotarHomeComponent,
+    PronalazenjeBrojaParceleComponent,
+    NewsOneGradjaninComponent,
+    NewsTwoGradjaninComponent,
+    NewsThreeGradjaninComponent,
+    NewsFourGradjaninComponent,
+    NewsFiveGradjaninComponent,
+    NewsSixGradjaninComponent,
+    PronalazenjeBrojaParceleGradjaninComponent
   ],
   imports: [
     BrowserModule,
