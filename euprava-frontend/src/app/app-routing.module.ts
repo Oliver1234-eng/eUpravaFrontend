@@ -13,12 +13,21 @@ import { NewsThreeComponent } from './katastar-news-folder/news-three/news-three
 import { NewsFourComponent } from './katastar-news-folder/news-four/news-four.component';
 import { NewsFiveComponent } from './katastar-news-folder/news-five/news-five.component';
 import { NewsSixComponent } from './katastar-news-folder/news-six/news-six.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { GradjaninKatastarComponent } from './gradjanin-katastar/gradjanin-katastar.component';
+import { GradjaninProfileComponent } from './gradjanin-profile/gradjanin-profile.component';
+import { GradjaninMaticarComponent } from './gradjanin-maticar/gradjanin-maticar.component';
+import { GradjaninNotarComponent } from './gradjanin-notar/gradjanin-notar.component';
+import { MaticarHomeComponent } from './maticar-home/maticar-home.component';
+import { NotarHomeComponent } from './notar-home/notar-home.component';
 
 
 const routes: Routes = [
   {path: '', component: FirstPageComponent},
   {path: 'login', component: LoginComponent},
   {path: 'katastar-home', component: KatastarHomeComponent},
+  {path: 'maticar-home', component: MaticarHomeComponent},
+  {path: 'notar-home', component: NotarHomeComponent},
   {path: 'gradjanin-home', component: GradjaninHomeComponent},
   {path: 'katastar-news/:id', component: KatastarNewsComponent},
   {path: 'katastar-profile', component: KatastarProfileComponent},
@@ -29,6 +38,12 @@ const routes: Routes = [
   {path: 'katastar-news-four', component: NewsFourComponent},
   {path: 'katastar-news-five', component: NewsFiveComponent},
   {path: 'katastar-news-six', component: NewsSixComponent},
+  {path: 'gradjanin-katastar', component: GradjaninKatastarComponent},
+  {path: 'gradjanin-profile', component: GradjaninProfileComponent},
+  {path: 'gradjanin-maticar', component: GradjaninMaticarComponent},
+  {path: 'gradjanin-notar', component: GradjaninNotarComponent},
+  {path: '404', component: NotFoundComponent},
+  {path: '**', redirectTo: '404'},
 ];
 
 @NgModule({
