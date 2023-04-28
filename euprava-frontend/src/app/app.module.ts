@@ -34,6 +34,11 @@ import { NewsFourGradjaninComponent } from './katastar-news-folder/news-four-gra
 import { NewsFiveGradjaninComponent } from './katastar-news-folder/news-five-gradjanin/news-five-gradjanin.component';
 import { NewsSixGradjaninComponent } from './katastar-news-folder/news-six-gradjanin/news-six-gradjanin.component';
 import { PronalazenjeBrojaParceleGradjaninComponent } from './pronalazenje-broja-parcele-gradjanin/pronalazenje-broja-parcele-gradjanin.component';
+import { PrikazGodisnjihStatistikaKatastraComponent } from './prikaz-godisnjih-statistika-katastra/prikaz-godisnjih-statistika-katastra.component';
+import { OrderByPipe } from './prikaz-godisnjih-statistika-katastra/OrderByPipe';
+import { FormsModule } from '@angular/forms';
+import { PrikazGodisnjihStatistikaKatastraGradjaninComponent } from './prikaz-godisnjih-statistika-katastra-gradjanin/prikaz-godisnjih-statistika-katastra-gradjanin.component';
+// import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -65,12 +70,18 @@ import { PronalazenjeBrojaParceleGradjaninComponent } from './pronalazenje-broja
     NewsFourGradjaninComponent,
     NewsFiveGradjaninComponent,
     NewsSixGradjaninComponent,
-    PronalazenjeBrojaParceleGradjaninComponent
+    PronalazenjeBrojaParceleGradjaninComponent,
+    PrikazGodisnjihStatistikaKatastraComponent,
+    OrderByPipe,
+    PrikazGodisnjihStatistikaKatastraGradjaninComponent,
+    // FormsModule,
+    // CommonModule
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
     RouterModule.forChild([{ path: 'login', component: LoginComponent }]),
 
     // ToastrModule.forRoot({

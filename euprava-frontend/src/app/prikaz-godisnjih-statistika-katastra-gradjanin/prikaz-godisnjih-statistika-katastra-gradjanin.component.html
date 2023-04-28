@@ -1,0 +1,116 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <a class="navbar-brand ml-auto" href="/gradjanin-home">eGrađanin</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/gradjanin-home">Početna</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/gradjanin-profile">Pregled profila</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/login">Odjava</a>
+        </li>
+      </ul>
+    </div>
+</nav>
+<div class="container my-4">
+    <h1 class="text-center">{{ title }}</h1>
+    <div class="row">
+        <div class="col-md-6">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Godina:</span>
+            </div>
+            <input type="number" class="form-control" id="godina" name="godina" [(ngModel)]="godinaPretrage">
+            <div class="input-group-append">
+              <button class="btn btn-primary" type="button" (click)="pretraziPoGodini()">Pretraži</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th scope="col" (click)="toggleSortOrder('godina')">
+            Godina
+            <i *ngIf="isSortOrderAsc('godina')" class="fas fa-sort-up"></i>
+            <i *ngIf="isSortOrderDesc('godina')" class="fas fa-sort-down"></i>
+            <i *ngIf="isSortOrderNone('godina')" class="fas fa-sort"></i>
+          </th>
+          <th scope="col" (click)="toggleSortOrder('podnetiZahtevi')">
+            Broj podnetih zahteva
+            <i *ngIf="isSortOrderAsc('podnetiZahtevi')" class="fas fa-sort-up"></i>
+            <i *ngIf="isSortOrderDesc('podnetiZahtevi')" class="fas fa-sort-down"></i>
+            <i *ngIf="isSortOrderNone('podnetiZahtevi')" class="fas fa-sort"></i>
+          </th>
+          <th scope="col" (click)="toggleSortOrder('reseniZahtevi')">
+            Broj rešenih zahteva
+            <i *ngIf="isSortOrderAsc('reseniZahtevi')" class="fas fa-sort-up"></i>
+            <i *ngIf="isSortOrderDesc('reseniZahtevi')" class="fas fa-sort-down"></i>
+            <i *ngIf="isSortOrderNone('reseniZahtevi')" class="fas fa-sort"></i>
+          </th>
+          <th scope="col" (click)="toggleSortOrder('procenatDrugostepenihZalbi')">
+            Procenat drugostepenih žalbi
+            <i *ngIf="isSortOrderAsc('procenatDrugostepenihZalbi')" class="fas fa-sort-up"></i>
+            <i *ngIf="isSortOrderDesc('procenatDrugostepenihZalbi')" class="fas fa-sort-down"></i>
+            <i *ngIf="isSortOrderNone('procenatDrugostepenihZalbi')" class="fas fa-sort"></i>
+          </th>
+          <th scope="col" (click)="toggleSortOrder('registrovaneParcele')">
+            Broj novih registrovanih parcela
+            <i *ngIf="isSortOrderAsc('registrovaneParcele')" class="fas fa-sort-up"></i>
+            <i *ngIf="isSortOrderDesc('registrovaneParcele')" class="fas fa-sort-down"></i>
+            <i *ngIf="isSortOrderNone('registrovaneParcele')" class="fas fa-sort"></i>
+          </th>
+          <th scope="col" (click)="toggleSortOrder('upisanaPravaNaParcelama')">
+            Broj upisanih prava na parcelama
+            <i *ngIf="isSortOrderAsc('upisanaPravaNaParcelama')" class="fas fa-sort-up"></i>
+            <i *ngIf="isSortOrderDesc('upisanaPravaNaParcelama')" class="fas fa-sort-down"></i>
+            <i *ngIf="isSortOrderNone('upisanaPravaNaParcelama')" class="fas fa-sort"></i>
+          </th>
+          <th scope="col" (click)="toggleSortOrder('vrednostUpisanihPrava')">
+            Vrednost upisanih prava (u RSD)
+            <i *ngIf="isSortOrderAsc('vrednostUpisanihPrava')" class="fas fa-sort-up"></i>
+            <i *ngIf="isSortOrderDesc('vrednostUpisanihPrava')" class="fas fa-sort-down"></i>
+            <i *ngIf="isSortOrderNone('vrednostUpisanihPrava')" class="fas fa-sort"></i>
+          </th>
+          <th scope="col" (click)="toggleSortOrder('zahteviZaPromenuVlasnistva')">
+            Broj obrađenih zahteva za promenu vlasništva
+            <i *ngIf="isSortOrderAsc('zahteviZaPromenuVlasnistva')" class="fas fa-sort-up"></i>
+            <i *ngIf="isSortOrderDesc('zahteviZaPromenuVlasnistva')" class="fas fa-sort-down"></i>
+            <i *ngIf="isSortOrderNone('zahteviZaPromenuVlasnistva')" class="fas fa-sort"></i>
+          </th>
+          <th scope="col" (click)="toggleSortOrder('izdavanjePotvrda')">
+            Broj izdavanja potvrda
+            <i *ngIf="isSortOrderAsc('izdavanjePotvrda')" class="fas fa-sort-up"></i>
+            <i *ngIf="isSortOrderDesc('izdavanjePotvrda')" class="fas fa-sort-down"></i>
+            <i *ngIf="isSortOrderNone('izdavanjePotvrda')" class="fas fa-sort"></i>
+          </th>
+          <th scope="col" (click)="toggleSortOrder('upotrebaElektronskihServisa')">
+            Broj upotreba elektronskih servisa
+            <i *ngIf="isSortOrderAsc('upotrebaElektronskihServisa')" class="fas fa-sort-up"></i>
+            <i *ngIf="isSortOrderDesc('upotrebaElektronskihServisa')" class="fas fa-sort-down"></i>
+            <i *ngIf="isSortOrderNone('upotrebaElektronskihServisa')" class="fas fa-sort"></i>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let statistika of statistikePrikaz | orderBy:sortField:sortOrder">
+          <td>{{ statistika.godina }}</td>
+          <td>{{ statistika.podnetiZahtevi }}</td>
+          <td>{{ statistika.reseniZahtevi }}</td>
+          <td>{{ statistika.procenatDrugostepenihZalbi }}%</td>
+          <td>{{ statistika.registrovaneParcele }}</td>
+          <td>{{ statistika.upisanaPravaNaParcelama }}</td>
+          <!-- <td>{{ statistika.vrednostUpisanihPrava | currency:'RSD':'symbol':'1.0-2' }}</td> -->
+          <td>{{ statistika.vrednostUpisanihPrava }}</td>
+          <td>{{ statistika.zahteviZaPromenuVlasnistva }}</td>
+          <td>{{ statistika.izdavanjePotvrda }}</td>
+          <td>{{ statistika.upotrebaElektronskihServisa }}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>

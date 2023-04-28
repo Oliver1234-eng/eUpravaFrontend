@@ -28,6 +28,8 @@ import { NewsFourGradjaninComponent } from './katastar-news-folder/news-four-gra
 import { NewsFiveGradjaninComponent } from './katastar-news-folder/news-five-gradjanin/news-five-gradjanin.component';
 import { NewsSixGradjaninComponent } from './katastar-news-folder/news-six-gradjanin/news-six-gradjanin.component';
 import { PronalazenjeBrojaParceleGradjaninComponent } from './pronalazenje-broja-parcele-gradjanin/pronalazenje-broja-parcele-gradjanin.component';
+import { PrikazGodisnjihStatistikaKatastraComponent } from './prikaz-godisnjih-statistika-katastra/prikaz-godisnjih-statistika-katastra.component';
+import { PrikazGodisnjihStatistikaKatastraGradjaninComponent } from './prikaz-godisnjih-statistika-katastra-gradjanin/prikaz-godisnjih-statistika-katastra-gradjanin.component';
 
 
 const routes: Routes = [
@@ -58,6 +60,8 @@ const routes: Routes = [
   {path: 'gradjanin-notar', component: GradjaninNotarComponent},
   {path: 'katastar-utvrdjivanje-broja-parcele', component: PronalazenjeBrojaParceleComponent},
   {path: 'katastar-utvrdjivanje-broja-parcele-gradjanin', component: PronalazenjeBrojaParceleGradjaninComponent},
+  {path: 'prikaz-godisnjih-statistika-katastra', component: PrikazGodisnjihStatistikaKatastraComponent},
+  {path: 'prikaz-godisnjih-statistika-katastra-gradjanin', component: PrikazGodisnjihStatistikaKatastraGradjaninComponent},
 
 
   {path: '404', component: NotFoundComponent},
