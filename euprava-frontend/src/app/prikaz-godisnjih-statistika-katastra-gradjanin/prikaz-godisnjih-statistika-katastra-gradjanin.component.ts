@@ -82,4 +82,203 @@ isSortOrderNone(sortField: string): boolean {
     this.statistikePrikaz = this.statistike;
   }
 
+  download2013WORD() {
+    const link = document.createElement('a');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', 'https://docs.google.com/document/d/1rfGNS31VqatjrYsyhNHgtACX5MsBizc5/export?format=docx');
+    link.setAttribute('download', 'izvestaj.docx');
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  }
+
+  download2013PDF() {
+    const link = document.createElement('a');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', 'https://drive.google.com/file/d/1Tw72U6VNNV1uSV79jCytjUE92Fupp8mF/view?usp=sharing');
+    link.setAttribute('download', 'izvestaj.pdf');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
+  download2014WORD() {
+    const link = document.createElement('a');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', 'https://docs.google.com/document/d/1RFFd7Lac29DJw3eKb7Li9sVJb2OX2eUP/export?format=docx');
+    link.setAttribute('download', 'izvestaj.docx');
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  }
+
+  download2014PDF() {
+    const link = document.createElement('a');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', 'https://drive.google.com/file/d/1UUWmumhyhPUR7Xj2ifxAbQsqwkc1OICM/view?usp=sharing');
+    link.setAttribute('download', 'izvestaj.pdf');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
+  download2015WORD() {
+    const link = document.createElement('a');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', 'https://docs.google.com/document/d/18hc8N7e0hiEvBzNARSeWYTIdUDH5yUaf/export?format=docx');
+    link.setAttribute('download', 'izvestaj.docx');
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  }
+
+  download2015PDF() {
+    const link = document.createElement('a');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', 'https://drive.google.com/file/d/19K4LZ2Y67jg0QkwSz2m3_vmemGO5sp6V/view?usp=sharing');
+    link.setAttribute('download', 'izvestaj.pdf');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
+  download2016WORD() {
+    const link = document.createElement('a');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', 'https://docs.google.com/document/d/1zOYdEHpsj7iv9DhVxLops_tS5URLPVgh/export?format=docx');
+    link.setAttribute('download', 'izvestaj.docx');
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  }
+
+  download2016PDF() {
+    const link = document.createElement('a');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', 'https://drive.google.com/file/d/1mR_BJxLlWWgckFD8LG5u6PdzqRbhYfwS/view?usp=sharing');
+    link.setAttribute('download', 'izvestaj.pdf');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
+  download2017WORD() {
+    const link = document.createElement('a');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', 'https://docs.google.com/document/d/1caWxr-7QfJR_J5dNjvKs7sLRe01vmI7c/export?format=docx');
+    link.setAttribute('download', 'izvestaj.docx');
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  }
+
+  download2017PDF() {
+    const link = document.createElement('a');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', 'https://drive.google.com/file/d/1o8NjC1y7hOvK-V3xNt6b4SodCh5XssQd/view?usp=sharing');
+    link.setAttribute('download', 'izvestaj.pdf');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
+  download2018WORD() {
+    const link = document.createElement('a');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', 'https://docs.google.com/document/d/1zlSnGxoAkyxi3_96BbzzMqCtLTmhOmh_/export?format=docx');
+    link.setAttribute('download', 'izvestaj.docx');
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  }
+
+  download2018PDF() {
+    const link = document.createElement('a');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', 'https://drive.google.com/file/d/1o78aw3vFWNlyPHmdn3NfH19-XHC1lF_5/view?usp=sharing');
+    link.setAttribute('download', 'izvestaj.pdf');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
+  download2019WORD() {
+    const link = document.createElement('a');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', 'https://docs.google.com/document/d/1-8_8qlfcleUCueNk7zOfM6RKsoDZrGzs/export?format=docx');
+    link.setAttribute('download', 'izvestaj.docx');
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  }
+
+  download2019PDF() {
+    const link = document.createElement('a');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', 'https://drive.google.com/file/d/1z2NipYIf10ReRxb9ikzk0HHzfvP2Ez6Z/view?usp=sharing');
+    link.setAttribute('download', 'izvestaj.pdf');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
+  download2020WORD() {
+    const link = document.createElement('a');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', 'https://docs.google.com/document/d/17_zhJwuOQlBRzXvgD5zd6B-kL_YOpOOH/export?format=docx');
+    link.setAttribute('download', 'izvestaj.docx');
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  }
+
+  download2020PDF() {
+    const link = document.createElement('a');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', 'https://drive.google.com/file/d/1lRQgoy5xuxI8tASjdwWtUkKfErGfQXEJ/view?usp=sharing');
+    link.setAttribute('download', 'izvestaj.pdf');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
+  download2021WORD() {
+    const link = document.createElement('a');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', 'https://docs.google.com/document/d/10UDG2_WRnYXOvkSr1x8mRvCLibzZ0EHl/export?format=docx');
+    link.setAttribute('download', 'izvestaj.docx');
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  }
+
+  download2021PDF() {
+    const link = document.createElement('a');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', 'https://drive.google.com/file/d/15GhogGiPvzSS0uFAzZn2-iXW9sTFkR9u/view?usp=sharing');
+    link.setAttribute('download', 'izvestaj.pdf');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
+  download2022WORD() {
+    const link = document.createElement('a');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', 'https://docs.google.com/document/d/1be4ygqI_r6U3HEPV7dH0j7X_5yUgv3mY/export?format=docx');
+    link.setAttribute('download', 'izvestaj.docx');
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  }
+
+  download2022PDF() {
+    const link = document.createElement('a');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', 'https://drive.google.com/file/d/1azqGAE1w3S5Ja2nxVF74PleQnd-5-6ij/view?usp=sharing');
+    link.setAttribute('download', 'izvestaj.pdf');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
 }

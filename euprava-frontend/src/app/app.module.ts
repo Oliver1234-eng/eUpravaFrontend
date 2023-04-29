@@ -38,6 +38,8 @@ import { PrikazGodisnjihStatistikaKatastraComponent } from './prikaz-godisnjih-s
 import { OrderByPipe } from './prikaz-godisnjih-statistika-katastra/OrderByPipe';
 import { FormsModule } from '@angular/forms';
 import { PrikazGodisnjihStatistikaKatastraGradjaninComponent } from './prikaz-godisnjih-statistika-katastra-gradjanin/prikaz-godisnjih-statistika-katastra-gradjanin.component';
+import { PrikazGodisnjihStatistikaInfoCentraComponent } from './prikaz-godisnjih-statistika-info-centra/prikaz-godisnjih-statistika-info-centra.component';
+import { PrikazGodisnjihStatistikaInfoCentraGradjaninComponent } from './prikaz-godisnjih-statistika-info-centra-gradjanin/prikaz-godisnjih-statistika-info-centra-gradjanin.component';
 // import { CommonModule } from '@angular/common';
 
 @NgModule({
@@ -74,6 +76,8 @@ import { PrikazGodisnjihStatistikaKatastraGradjaninComponent } from './prikaz-go
     PrikazGodisnjihStatistikaKatastraComponent,
     OrderByPipe,
     PrikazGodisnjihStatistikaKatastraGradjaninComponent,
+    PrikazGodisnjihStatistikaInfoCentraComponent,
+    PrikazGodisnjihStatistikaInfoCentraGradjaninComponent,
     // FormsModule,
     // CommonModule
   ],

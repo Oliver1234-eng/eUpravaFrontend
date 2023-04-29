@@ -30,6 +30,8 @@ import { NewsSixGradjaninComponent } from './katastar-news-folder/news-six-gradj
 import { PronalazenjeBrojaParceleGradjaninComponent } from './pronalazenje-broja-parcele-gradjanin/pronalazenje-broja-parcele-gradjanin.component';
 import { PrikazGodisnjihStatistikaKatastraComponent } from './prikaz-godisnjih-statistika-katastra/prikaz-godisnjih-statistika-katastra.component';
 import { PrikazGodisnjihStatistikaKatastraGradjaninComponent } from './prikaz-godisnjih-statistika-katastra-gradjanin/prikaz-godisnjih-statistika-katastra-gradjanin.component';
+import { PrikazGodisnjihStatistikaInfoCentraComponent } from './prikaz-godisnjih-statistika-info-centra/prikaz-godisnjih-statistika-info-centra.component';
+import { PrikazGodisnjihStatistikaInfoCentraGradjaninComponent } from './prikaz-godisnjih-statistika-info-centra-gradjanin/prikaz-godisnjih-statistika-info-centra-gradjanin.component';
 
 
 const routes: Routes = [
@@ -62,6 +64,8 @@ const routes: Routes = [
   {path: 'katastar-utvrdjivanje-broja-parcele-gradjanin', component: PronalazenjeBrojaParceleGradjaninComponent},
   {path: 'prikaz-godisnjih-statistika-katastra', component: PrikazGodisnjihStatistikaKatastraComponent},
   {path: 'prikaz-godisnjih-statistika-katastra-gradjanin', component: PrikazGodisnjihStatistikaKatastraGradjaninComponent},
+  {path: 'prikaz-godisnjih-statistika-info-centra', component: PrikazGodisnjihStatistikaInfoCentraComponent},
+  {path: 'prikaz-godisnjih-statistika-info-centra-gradjanin', component: PrikazGodisnjihStatistikaInfoCentraGradjaninComponent},
 
 
   {path: '404', component: NotFoundComponent},

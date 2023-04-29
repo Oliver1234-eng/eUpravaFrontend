@@ -1,0 +1,123 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <a class="navbar-brand ml-auto" href="/katastar-home">Aplikacija za katastar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/katastar-home">Početna</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/katastar-profile">Pregled profila</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/login">Odjava</a>
+        </li>
+      </ul>
+    </div>
+</nav>
+<div class="container my-4">
+  <h1 class="text-center">{{ title }}</h1>
+  <div class="row">
+      <div class="col-md-6">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Godina:</span>
+          </div>
+          <input type="number" class="form-control" id="godina" name="godina" [(ngModel)]="godinaPretrage">
+          <div class="input-group-append">
+            <button class="btn btn-primary" type="button" (click)="pretraziPoGodini()">Pretraži</button>
+          </div>
+        </div>
+      </div>
+  </div>
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th scope="col" (click)="toggleSortOrder('godina')">
+          Godina
+          <i *ngIf="isSortOrderAsc('godina')" class="fas fa-sort-up"></i>
+          <i *ngIf="isSortOrderDesc('godina')" class="fas fa-sort-down"></i>
+          <i *ngIf="isSortOrderNone('godina')" class="fas fa-sort"></i>
+        </th>
+        <th scope="col" (click)="toggleSortOrder('kolikoPutaOdgovoriliNaPoziv')">
+          Broj koliko puta smo odgovorili na poziv
+          <i *ngIf="isSortOrderAsc('kolikoPutaOdgovoriliNaPoziv')" class="fas fa-sort-up"></i>
+          <i *ngIf="isSortOrderDesc('kolikoPutaOdgovoriliNaPoziv')" class="fas fa-sort-down"></i>
+          <i *ngIf="isSortOrderNone('kolikoPutaOdgovoriliNaPoziv')" class="fas fa-sort"></i>
+        </th>
+        <th scope="col" (click)="toggleSortOrder('prosecnoVremeOdgovoraNaPoziv')">
+          Prosečno vreme odgovora na poziv (u sekundama)
+          <i *ngIf="isSortOrderAsc('prosecnoVremeOdgovoraNaPoziv')" class="fas fa-sort-up"></i>
+          <i *ngIf="isSortOrderDesc('prosecnoVremeOdgovoraNaPoziv')" class="fas fa-sort-down"></i>
+          <i *ngIf="isSortOrderNone('prosecnoVremeOdgovoraNaPoziv')" class="fas fa-sort"></i>
+        </th>
+        <th scope="col" (click)="toggleSortOrder('kolikoPutaOdgovoriliNaMejl')">
+          Broj koliko pita smo odgovorili na mejl
+          <i *ngIf="isSortOrderAsc('kolikoPutaOdgovoriliNaMejl')" class="fas fa-sort-up"></i>
+          <i *ngIf="isSortOrderDesc('kolikoPutaOdgovoriliNaMejl')" class="fas fa-sort-down"></i>
+          <i *ngIf="isSortOrderNone('kolikoPutaOdgovoriliNaMejl')" class="fas fa-sort"></i>
+        </th>
+        <th scope="col" (click)="toggleSortOrder('kolikoPutaCetovali')">
+          Broj koliko puta smo četovali
+          <i *ngIf="isSortOrderAsc('kolikoPutaCetovali')" class="fas fa-sort-up"></i>
+          <i *ngIf="isSortOrderDesc('kolikoPutaCetovali')" class="fas fa-sort-down"></i>
+          <i *ngIf="isSortOrderNone('kolikoPutaCetovali')" class="fas fa-sort"></i>
+        </th>
+        <th scope="col" (click)="toggleSortOrder('kolikoPutaKorisnicimaZakazaliTerminZaPredajuZahtevaPutemAplikacijeEZakazivanje')">
+          Broj koliko puta smo korisnicima zakazali termin za predaju zahteva putem aplikacije eZakazivanje
+          <i *ngIf="isSortOrderAsc('kolikoPutaKorisnicimaZakazaliTerminZaPredajuZahtevaPutemAplikacijeEZakazivanje')" class="fas fa-sort-up"></i>
+          <i *ngIf="isSortOrderDesc('kolikoPutaKorisnicimaZakazaliTerminZaPredajuZahtevaPutemAplikacijeEZakazivanje')" class="fas fa-sort-down"></i>
+          <i *ngIf="isSortOrderNone('kolikoPutaKorisnicimaZakazaliTerminZaPredajuZahtevaPutemAplikacijeEZakazivanje')" class="fas fa-sort"></i>
+        </th>
+        <th scope="col" (click)="toggleSortOrder('kolikoPutaKorisnicimaOmoguciliObracanjePutemAplikacijeEPrimedbe')">
+          Broj koliko puta smo korisnicima omogućili obraćanje putem aplikacije ePrimedbe
+          <i *ngIf="isSortOrderAsc('kolikoPutaKorisnicimaOmoguciliObracanjePutemAplikacijeEPrimedbe')" class="fas fa-sort-up"></i>
+          <i *ngIf="isSortOrderDesc('kolikoPutaKorisnicimaOmoguciliObracanjePutemAplikacijeEPrimedbe')" class="fas fa-sort-down"></i>
+          <i *ngIf="isSortOrderNone('kolikoPutaKorisnicimaOmoguciliObracanjePutemAplikacijeEPrimedbe')" class="fas fa-sort"></i>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let statistikaInfoCentra of statistikePrikaz | orderBy:sortField:sortOrder">
+        <td>{{ statistikaInfoCentra.godina }}</td>
+        <td>{{ statistikaInfoCentra.kolikoPutaOdgovoriliNaPoziv }}</td>
+        <td>{{ statistikaInfoCentra.prosecnoVremeOdgovoraNaPoziv }}</td>
+        <td>{{ statistikaInfoCentra.kolikoPutaOdgovoriliNaMejl }}</td>
+        <td>{{ statistikaInfoCentra.kolikoPutaCetovali }}</td>
+        <td>{{ statistikaInfoCentra.kolikoPutaKorisnicimaZakazaliTerminZaPredajuZahtevaPutemAplikacijeEZakazivanje }}</td>
+        <td>{{ statistikaInfoCentra.kolikoPutaKorisnicimaOmoguciliObracanjePutemAplikacijeEPrimedbe }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <button type="button" class="btn btn-primary" (click)="download2013WORD()">Preuzmi izveštaj statistike info centra za 2013. godinu (WORD) <i class="fa fa-download"></i></button>
+    &nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-danger" (click)="download2013PDF()">Preuzmi izveštaj statistike info centra za 2013. godinu (PDF) <i class="fa fa-download"></i></button>
+    <br><br>
+    <button type="button" class="btn btn-primary" (click)="download2014WORD()">Preuzmi izveštaj statistike info centra za 2014. godinu (WORD) <i class="fa fa-download"></i></button>
+    &nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-danger" (click)="download2014PDF()">Preuzmi izveštaj statistike info centra za 2014. godinu (PDF) <i class="fa fa-download"></i></button>
+    <br><br>
+    <button type="button" class="btn btn-primary" (click)="download2015WORD()">Preuzmi izveštaj statistike info centra za 2015. godinu (WORD) <i class="fa fa-download"></i></button>
+    &nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-danger" (click)="download2015PDF()">Preuzmi izveštaj statistike info centra za 2015. godinu (PDF) <i class="fa fa-download"></i></button>
+    <br><br>
+    <button type="button" class="btn btn-primary" (click)="download2016WORD()">Preuzmi izveštaj statistike info centra za 2016. godinu (WORD) <i class="fa fa-download"></i></button>
+    &nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-danger" (click)="download2016PDF()">Preuzmi izveštaj statistike info centra za 2016. godinu (PDF) <i class="fa fa-download"></i></button>
+    <br><br>
+    <button type="button" class="btn btn-primary" (click)="download2017WORD()">Preuzmi izveštaj statistike info centra za 2017. godinu (WORD) <i class="fa fa-download"></i></button>
+    &nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-danger" (click)="download2017PDF()">Preuzmi izveštaj statistike info centra za 2017. godinu (PDF) <i class="fa fa-download"></i></button>
+    <br><br>
+    <button type="button" class="btn btn-primary" (click)="download2018WORD()">Preuzmi izveštaj statistike info centra za 2018. godinu (WORD) <i class="fa fa-download"></i></button>
+    &nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-danger" (click)="download2018PDF()">Preuzmi izveštaj statistike info centra za 2018. godinu (PDF) <i class="fa fa-download"></i></button>
+    <br><br>
+    <button type="button" class="btn btn-primary" (click)="download2019WORD()">Preuzmi izveštaj statistike info centra za 2019. godinu (WORD) <i class="fa fa-download"></i></button>
+    &nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-danger" (click)="download2019PDF()">Preuzmi izveštaj statistike info centra za 2019. godinu (PDF) <i class="fa fa-download"></i></button>
+    <br><br>
+    <button type="button" class="btn btn-primary" (click)="download2020WORD()">Preuzmi izveštaj statistike info centra za 2020. godinu (WORD) <i class="fa fa-download"></i></button>
+    &nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-danger" (click)="download2020PDF()">Preuzmi izveštaj statistike info centra za 2020. godinu (PDF) <i class="fa fa-download"></i></button>
+    <br><br>
+    <button type="button" class="btn btn-primary" (click)="download2021WORD()">Preuzmi izveštaj statistike info centra za 2021. godinu (WORD) <i class="fa fa-download"></i></button>
+    &nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-danger" (click)="download2021PDF()">Preuzmi izveštaj statistike info centra za 2021. godinu (PDF) <i class="fa fa-download"></i></button>
+    <br><br>
+    <button type="button" class="btn btn-primary" (click)="download2022WORD()">Preuzmi izveštaj statistike info centra za 2022. godinu (WORD) <i class="fa fa-download"></i></button>
+    &nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-danger" (click)="download2022PDF()">Preuzmi izveštaj statistike info centra za 2022. godinu (PDF) <i class="fa fa-download"></i></button>
+</div>
