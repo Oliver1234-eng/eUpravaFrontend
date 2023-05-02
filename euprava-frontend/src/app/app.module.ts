@@ -42,6 +42,8 @@ import { PrikazGodisnjihStatistikaInfoCentraComponent } from './prikaz-godisnjih
 import { PrikazGodisnjihStatistikaInfoCentraGradjaninComponent } from './prikaz-godisnjih-statistika-info-centra-gradjanin/prikaz-godisnjih-statistika-info-centra-gradjanin.component';
 import { PrikazIstorijePromenaPodatakaONekomZemljistuComponent } from './prikaz-istorije-promena-podataka-o-nekom-zemljistu/prikaz-istorije-promena-podataka-o-nekom-zemljistu.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PretragaBazePodatakaKatastraNepokretnostiComponent } from './pretraga-baze-podataka-katastra-nepokretnosti/pretraga-baze-podataka-katastra-nepokretnosti.component';
+import { PretragaBazePodatakaKatastraNepokretnostiGradjaninComponent } from './pretraga-baze-podataka-katastra-nepokretnosti-gradjanin/pretraga-baze-podataka-katastra-nepokretnosti-gradjanin.component';
 // import { CommonModule } from '@angular/common';
 
 @NgModule({
@@ -81,6 +83,8 @@ import { HttpClientModule } from '@angular/common/http';
     PrikazGodisnjihStatistikaInfoCentraComponent,
     PrikazGodisnjihStatistikaInfoCentraGradjaninComponent,
     PrikazIstorijePromenaPodatakaONekomZemljistuComponent,
+    PretragaBazePodatakaKatastraNepokretnostiComponent,
+    PretragaBazePodatakaKatastraNepokretnostiGradjaninComponent,
     // FormsModule,
     // CommonModule
   ],

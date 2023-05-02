@@ -1,0 +1,109 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <a class="navbar-brand ml-auto" href="/gradjanin-home">eGrađanin</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/gradjanin-home">Početna</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/gradjanin-profile">Pregled profila</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/login">Odjava</a>
+        </li>
+      </ul>
+    </div>
+</nav>
+<div class="container">
+    <h1>Prikaz istorije promena podataka o svim zemljištima</h1>
+    <div class="row">
+    <div class="col-md-6">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Broj parcele:</span>
+        </div>
+        <input type="text" class="form-control" id="brojParcele" name="brojParcele" [(ngModel)]="pretragaParcele">
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="button" (click)="pretraziPoParceli()">Pretraži</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col" (click)="toggleSortOrder('id')">
+            ID
+            <i *ngIf="isSortOrderAsc('id')" class="fas fa-sort-up"></i>
+            <i *ngIf="isSortOrderDesc('id')" class="fas fa-sort-down"></i>
+            <i *ngIf="isSortOrderNone('id')" class="fas fa-sort"></i>
+          </th>
+          <th scope="col" (click)="toggleSortOrder('adresa')">
+            Adresa
+            <i *ngIf="isSortOrderAsc('adresa')" class="fas fa-sort-up"></i>
+            <i *ngIf="isSortOrderDesc('adresa')" class="fas fa-sort-down"></i>
+            <i *ngIf="isSortOrderNone('adresa')" class="fas fa-sort"></i>
+          </th>
+          <th scope="col" (click)="toggleSortOrder('brojParcele')">
+            Broj parcele
+            <i *ngIf="isSortOrderAsc('brojParcele')" class="fas fa-sort-up"></i>
+            <i *ngIf="isSortOrderDesc('brojParcele')" class="fas fa-sort-down"></i>
+            <i *ngIf="isSortOrderNone('brojParcele')" class="fas fa-sort"></i>
+          </th>
+          <th scope="col" (click)="toggleSortOrder('brojDelaParcele')">
+            Broj dela parcele
+            <i *ngIf="isSortOrderAsc('brojDelaParcele')" class="fas fa-sort-up"></i>
+            <i *ngIf="isSortOrderDesc('brojDelaParcele')" class="fas fa-sort-down"></i>
+            <i *ngIf="isSortOrderNone('brojDelaParcele')" class="fas fa-sort"></i>
+          </th>
+          <th scope="col" (click)="toggleSortOrder('povrsina')">
+            Površina
+            <i *ngIf="isSortOrderAsc('povrsina')" class="fas fa-sort-up"></i>
+            <i *ngIf="isSortOrderDesc('povrsina')" class="fas fa-sort-down"></i>
+            <i *ngIf="isSortOrderNone('povrsina')" class="fas fa-sort"></i>
+          </th>
+          <th scope="col" (click)="toggleSortOrder('potes')">
+            Potes
+            <i *ngIf="isSortOrderAsc('potes')" class="fas fa-sort-up"></i>
+            <i *ngIf="isSortOrderDesc('potes')" class="fas fa-sort-down"></i>
+            <i *ngIf="isSortOrderNone('potes')" class="fas fa-sort"></i>
+          </th>
+          <th scope="col" (click)="toggleSortOrder('nacinKoriscenjaZemljista')">
+            Način korišćenja zemljišta
+            <i *ngIf="isSortOrderAsc('nacinKoriscenjaZemljista')" class="fas fa-sort-up"></i>
+            <i *ngIf="isSortOrderDesc('nacinKoriscenjaZemljista')" class="fas fa-sort-down"></i>
+            <i *ngIf="isSortOrderNone('nacinKoriscenjaZemljista')" class="fas fa-sort"></i>
+          </th>
+          <th scope="col" (click)="toggleSortOrder('nacinKoriscenjaObjekta')">
+            Način korišćenja objekta
+            <i *ngIf="isSortOrderAsc('nacinKoriscenjaObjekta')" class="fas fa-sort-up"></i>
+            <i *ngIf="isSortOrderDesc('nacinKoriscenjaObjekta')" class="fas fa-sort-down"></i>
+            <i *ngIf="isSortOrderNone('nacinKoriscenjaObjekta')" class="fas fa-sort"></i>
+          </th>
+          <th scope="col" (click)="toggleSortOrder('gradjanin')">
+            Građanin koji poseduje tu nepokretnost
+            <i *ngIf="isSortOrderAsc('gradjanin')" class="fas fa-sort-up"></i>
+            <i *ngIf="isSortOrderDesc('gradjanin')" class="fas fa-sort-down"></i>
+            <i *ngIf="isSortOrderNone('gradjanin')" class="fas fa-sort"></i>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let nepokretnost of nepokretnosti">
+          <td>{{nepokretnost.id}}</td>
+          <td>{{nepokretnost.adresa}}</td>
+          <td>{{nepokretnost.brojParcele}}</td>
+          <td>{{nepokretnost.brojDelaParcele}}</td>
+          <td>{{nepokretnost.povrsina}}</td>
+          <td>{{nepokretnost.potes}}</td>
+          <td>{{nepokretnost.nacinKoriscenjaZemljista}}</td>
+          <td>{{nepokretnost.nacinKoriscenjaObjekta}}</td>
+          <td>{{nepokretnost.gradjanin.ime}} {{nepokretnost.gradjanin.prezime}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <p *ngIf="poruka">{{ poruka }}</p>
+</div>
