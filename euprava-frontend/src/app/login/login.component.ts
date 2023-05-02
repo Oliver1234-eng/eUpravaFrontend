@@ -39,6 +39,8 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['maticar-home']);
     } else if (username === 'notar' && password === 'notar') {
       this.router.navigate(['notar-home']);
+    } else if (username === 'gradjanin2' && password === 'gradjanin2') {
+      this.router.navigate(['gradjanin-home']);
     } else {
       this.error = "Neispravno korisničko ime i/ili lozinka. Molimo pokušajte ponovo.";
     }

@@ -32,6 +32,7 @@ import { PrikazGodisnjihStatistikaKatastraComponent } from './prikaz-godisnjih-s
 import { PrikazGodisnjihStatistikaKatastraGradjaninComponent } from './prikaz-godisnjih-statistika-katastra-gradjanin/prikaz-godisnjih-statistika-katastra-gradjanin.component';
 import { PrikazGodisnjihStatistikaInfoCentraComponent } from './prikaz-godisnjih-statistika-info-centra/prikaz-godisnjih-statistika-info-centra.component';
 import { PrikazGodisnjihStatistikaInfoCentraGradjaninComponent } from './prikaz-godisnjih-statistika-info-centra-gradjanin/prikaz-godisnjih-statistika-info-centra-gradjanin.component';
+import { PrikazIstorijePromenaPodatakaONekomZemljistuComponent } from './prikaz-istorije-promena-podataka-o-nekom-zemljistu/prikaz-istorije-promena-podataka-o-nekom-zemljistu.component';
 
 
 const routes: Routes = [
@@ -66,6 +67,7 @@ const routes: Routes = [
   {path: 'prikaz-godisnjih-statistika-katastra-gradjanin', component: PrikazGodisnjihStatistikaKatastraGradjaninComponent},
   {path: 'prikaz-godisnjih-statistika-info-centra', component: PrikazGodisnjihStatistikaInfoCentraComponent},
   {path: 'prikaz-godisnjih-statistika-info-centra-gradjanin', component: PrikazGodisnjihStatistikaInfoCentraGradjaninComponent},
+  {path: 'prikaz-istorije-promena-podataka-o-nekom-zemljistu', component: PrikazIstorijePromenaPodatakaONekomZemljistuComponent},
 
 
   {path: '404', component: NotFoundComponent},

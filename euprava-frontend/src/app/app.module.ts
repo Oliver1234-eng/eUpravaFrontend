@@ -40,6 +40,8 @@ import { FormsModule } from '@angular/forms';
 import { PrikazGodisnjihStatistikaKatastraGradjaninComponent } from './prikaz-godisnjih-statistika-katastra-gradjanin/prikaz-godisnjih-statistika-katastra-gradjanin.component';
 import { PrikazGodisnjihStatistikaInfoCentraComponent } from './prikaz-godisnjih-statistika-info-centra/prikaz-godisnjih-statistika-info-centra.component';
 import { PrikazGodisnjihStatistikaInfoCentraGradjaninComponent } from './prikaz-godisnjih-statistika-info-centra-gradjanin/prikaz-godisnjih-statistika-info-centra-gradjanin.component';
+import { PrikazIstorijePromenaPodatakaONekomZemljistuComponent } from './prikaz-istorije-promena-podataka-o-nekom-zemljistu/prikaz-istorije-promena-podataka-o-nekom-zemljistu.component';
+import { HttpClientModule } from '@angular/common/http';
 // import { CommonModule } from '@angular/common';
 
 @NgModule({
@@ -78,6 +80,7 @@ import { PrikazGodisnjihStatistikaInfoCentraGradjaninComponent } from './prikaz-
     PrikazGodisnjihStatistikaKatastraGradjaninComponent,
     PrikazGodisnjihStatistikaInfoCentraComponent,
     PrikazGodisnjihStatistikaInfoCentraGradjaninComponent,
+    PrikazIstorijePromenaPodatakaONekomZemljistuComponent,
     // FormsModule,
     // CommonModule
   ],
@@ -86,6 +89,7 @@ import { PrikazGodisnjihStatistikaInfoCentraGradjaninComponent } from './prikaz-
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forChild([{ path: 'login', component: LoginComponent }]),
 
     // ToastrModule.forRoot({
