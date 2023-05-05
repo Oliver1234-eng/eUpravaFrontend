@@ -35,6 +35,11 @@ import { PrikazGodisnjihStatistikaInfoCentraGradjaninComponent } from './prikaz-
 import { PrikazIstorijePromenaPodatakaONekomZemljistuComponent } from './prikaz-istorije-promena-podataka-o-nekom-zemljistu/prikaz-istorije-promena-podataka-o-nekom-zemljistu.component';
 import { PretragaBazePodatakaKatastraNepokretnostiComponent } from './pretraga-baze-podataka-katastra-nepokretnosti/pretraga-baze-podataka-katastra-nepokretnosti.component';
 import { PretragaBazePodatakaKatastraNepokretnostiGradjaninComponent } from './pretraga-baze-podataka-katastra-nepokretnosti-gradjanin/pretraga-baze-podataka-katastra-nepokretnosti-gradjanin.component';
+import { NotarProfileComponent } from './notar-profile/notar-profile.component';
+import { PrikazUgovoraNotarComponent } from './prikaz-ugovora-notar/prikaz-ugovora-notar.component';
+import { PrikazTerminaNotarComponent } from './prikaz-termina-notar/prikaz-termina-notar.component';
+import { MaticarProfileComponent } from './maticar-profile/maticar-profile.component';
+import { PregledMaticneKnjigeRodjenihComponent } from './pregled-maticne-knjige-rodjenih/pregled-maticne-knjige-rodjenih.component';
 
 
 const routes: Routes = [
@@ -72,6 +77,11 @@ const routes: Routes = [
   {path: 'prikaz-istorije-promena-podataka-o-nekom-zemljistu', component: PrikazIstorijePromenaPodatakaONekomZemljistuComponent},
   {path: 'pretraga-baze-podataka-katastra-nepokretnosti', component: PretragaBazePodatakaKatastraNepokretnostiComponent},
   {path: 'pretraga-baze-podataka-katastra-nepokretnosti-gradjanin', component: PretragaBazePodatakaKatastraNepokretnostiGradjaninComponent},
+  {path: 'notar-profile', component: NotarProfileComponent},
+  {path: 'prikaz-ugovora-notar', component: PrikazUgovoraNotarComponent},
+  {path: 'prikaz-termina-notar', component: PrikazTerminaNotarComponent},
+  {path: 'maticar-profile', component: MaticarProfileComponent},
+  {path: 'pregled-maticne-knjige-rodjenih', component: PregledMaticneKnjigeRodjenihComponent},
 
 
   {path: '404', component: NotFoundComponent},

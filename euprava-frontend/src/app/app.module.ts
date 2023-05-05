@@ -44,6 +44,11 @@ import { PrikazIstorijePromenaPodatakaONekomZemljistuComponent } from './prikaz-
 import { HttpClientModule } from '@angular/common/http';
 import { PretragaBazePodatakaKatastraNepokretnostiComponent } from './pretraga-baze-podataka-katastra-nepokretnosti/pretraga-baze-podataka-katastra-nepokretnosti.component';
 import { PretragaBazePodatakaKatastraNepokretnostiGradjaninComponent } from './pretraga-baze-podataka-katastra-nepokretnosti-gradjanin/pretraga-baze-podataka-katastra-nepokretnosti-gradjanin.component';
+import { NotarProfileComponent } from './notar-profile/notar-profile.component';
+import { PrikazUgovoraNotarComponent } from './prikaz-ugovora-notar/prikaz-ugovora-notar.component';
+import { PrikazTerminaNotarComponent } from './prikaz-termina-notar/prikaz-termina-notar.component';
+import { MaticarProfileComponent } from './maticar-profile/maticar-profile.component';
+import { PregledMaticneKnjigeRodjenihComponent } from './pregled-maticne-knjige-rodjenih/pregled-maticne-knjige-rodjenih.component';
 // import { CommonModule } from '@angular/common';
 
 @NgModule({
@@ -85,6 +90,11 @@ import { PretragaBazePodatakaKatastraNepokretnostiGradjaninComponent } from './p
     PrikazIstorijePromenaPodatakaONekomZemljistuComponent,
     PretragaBazePodatakaKatastraNepokretnostiComponent,
     PretragaBazePodatakaKatastraNepokretnostiGradjaninComponent,
+    NotarProfileComponent,
+    PrikazUgovoraNotarComponent,
+    PrikazTerminaNotarComponent,
+    MaticarProfileComponent,
+    PregledMaticneKnjigeRodjenihComponent,
     // FormsModule,
     // CommonModule
   ],
