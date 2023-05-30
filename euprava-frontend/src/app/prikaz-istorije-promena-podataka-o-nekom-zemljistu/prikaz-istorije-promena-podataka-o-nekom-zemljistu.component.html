@@ -95,11 +95,17 @@
           <i *ngIf="isSortOrderDesc('katastar')" class="fas fa-sort-down"></i>
           <i *ngIf="isSortOrderNone('katastar')" class="fas fa-sort"></i>
         </th>
-        <th scope="col" (click)="toggleSortOrder('gradjanin')">
-          Građanin koji poseduje tu nepokretnost
-          <i *ngIf="isSortOrderAsc('gradjanin')" class="fas fa-sort-up"></i>
-          <i *ngIf="isSortOrderDesc('gradjanin')" class="fas fa-sort-down"></i>
-          <i *ngIf="isSortOrderNone('gradjanin')" class="fas fa-sort"></i>
+        <th scope="col" (click)="toggleSortOrder('stariVlasnik')">
+          Stari vlasnik nepokretnosti
+          <i *ngIf="isSortOrderAsc('stariVlasnik')" class="fas fa-sort-up"></i>
+          <i *ngIf="isSortOrderDesc('stariVlasnik')" class="fas fa-sort-down"></i>
+          <i *ngIf="isSortOrderNone('stariVlasnik')" class="fas fa-sort"></i>
+        </th>
+        <th scope="col" (click)="toggleSortOrder('noviVlasnik')">
+          Novi vlasnik nepokretnosti
+          <i *ngIf="isSortOrderAsc('noviVlasnik')" class="fas fa-sort-up"></i>
+          <i *ngIf="isSortOrderDesc('noviVlasnik')" class="fas fa-sort-down"></i>
+          <i *ngIf="isSortOrderNone('noviVlasnik')" class="fas fa-sort"></i>
         </th>
       </tr>
     </thead>
@@ -114,8 +120,9 @@
         <td>{{istorijaPromene.nepokretnost.potes}}</td>
         <td>{{istorijaPromene.nepokretnost.nacinKoriscenjaZemljista}}</td>
         <td>{{istorijaPromene.nepokretnost.nacinKoriscenjaObjekta}}</td>
-        <td>{{istorijaPromene.nepokretnost.katastar.ime}} {{istorijaPromene.nepokretnost.katastar.prezime}}</td>
-        <td>{{istorijaPromene.nepokretnost.gradjanin.ime}} {{istorijaPromene.nepokretnost.gradjanin.prezime}}</td>
+        <td>{{istorijaPromene.katastar}}</td>
+        <td>{{istorijaPromene.stariVlasnik}}</td>
+        <td>{{istorijaPromene.noviVlasnik}}</td>
       </tr>
     </tbody>
   </table>

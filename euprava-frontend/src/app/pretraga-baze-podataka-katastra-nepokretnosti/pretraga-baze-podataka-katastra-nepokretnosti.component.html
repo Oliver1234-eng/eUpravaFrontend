@@ -35,12 +35,6 @@
     <table class="table table-striped">
       <thead>
         <tr>
-          <th scope="col" (click)="toggleSortOrder('id')">
-            ID
-            <i *ngIf="isSortOrderAsc('id')" class="fas fa-sort-up"></i>
-            <i *ngIf="isSortOrderDesc('id')" class="fas fa-sort-down"></i>
-            <i *ngIf="isSortOrderNone('id')" class="fas fa-sort"></i>
-          </th>
           <th scope="col" (click)="toggleSortOrder('adresa')">
             Adresa
             <i *ngIf="isSortOrderAsc('adresa')" class="fas fa-sort-up"></i>
@@ -83,17 +77,22 @@
             <i *ngIf="isSortOrderDesc('nacinKoriscenjaObjekta')" class="fas fa-sort-down"></i>
             <i *ngIf="isSortOrderNone('nacinKoriscenjaObjekta')" class="fas fa-sort"></i>
           </th>
-          <th scope="col" (click)="toggleSortOrder('gradjanin')">
-            Građanin koji poseduje tu nepokretnost
-            <i *ngIf="isSortOrderAsc('gradjanin')" class="fas fa-sort-up"></i>
-            <i *ngIf="isSortOrderDesc('gradjanin')" class="fas fa-sort-down"></i>
-            <i *ngIf="isSortOrderNone('gradjanin')" class="fas fa-sort"></i>
+          <th scope="col" (click)="toggleSortOrder('stariVlasnik')">
+            Stari vlasnik nepokretnosti
+            <i *ngIf="isSortOrderAsc('stariVlasnik')" class="fas fa-sort-up"></i>
+            <i *ngIf="isSortOrderDesc('stariVlasnik')" class="fas fa-sort-down"></i>
+            <i *ngIf="isSortOrderNone('stariVlasnik')" class="fas fa-sort"></i>
+          </th>
+          <th scope="col" (click)="toggleSortOrder('noviVlasnik')">
+            Novi vlasnik nepokretnosti
+            <i *ngIf="isSortOrderAsc('noviVlasnik')" class="fas fa-sort-up"></i>
+            <i *ngIf="isSortOrderDesc('noviVlasnik')" class="fas fa-sort-down"></i>
+            <i *ngIf="isSortOrderNone('noviVlasnik')" class="fas fa-sort"></i>
           </th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let nepokretnost of nepokretnosti">
-          <td>{{nepokretnost.id}}</td>
           <td>{{nepokretnost.adresa}}</td>
           <td>{{nepokretnost.brojParcele}}</td>
           <td>{{nepokretnost.brojDelaParcele}}</td>
@@ -101,7 +100,8 @@
           <td>{{nepokretnost.potes}}</td>
           <td>{{nepokretnost.nacinKoriscenjaZemljista}}</td>
           <td>{{nepokretnost.nacinKoriscenjaObjekta}}</td>
-          <td>{{nepokretnost.gradjanin.ime}} {{nepokretnost.gradjanin.prezime}}</td>
+          <td>{{nepokretnost.stariVlasnik}}</td>
+          <td>{{nepokretnost.noviVlasnik}}</td>
         </tr>
       </tbody>
     </table>

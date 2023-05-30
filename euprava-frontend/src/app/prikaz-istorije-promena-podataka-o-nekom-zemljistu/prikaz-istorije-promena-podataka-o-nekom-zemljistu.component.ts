@@ -70,15 +70,21 @@ export class PrikazIstorijePromenaPodatakaONekomZemljistuComponent implements On
       });
     } else if (sortField === 'katastar') {
       this.istorijePromena.sort((a, b) => {
-        const katastarA = a.nepokretnost.katastar.ime.toLowerCase();
-        const katastarB = b.nepokretnost.katastar.ime.toLowerCase();
+        const katastarA = a.katastar.toLowerCase();
+        const katastarB = b.katastar.toLowerCase();
         return sortOrder === 'asc' ? katastarA.localeCompare(katastarB, undefined, { sensitivity: 'base' }) : katastarB.localeCompare(katastarA, undefined, { sensitivity: 'base' });
       });
-    } else if (sortField === 'gradjanin') {
+    } else if (sortField === 'stariVlasnik') {
       this.istorijePromena.sort((a, b) => {
-        const gradjaninA = a.nepokretnost.gradjanin.ime.toLowerCase();
-        const gradjaninB = b.nepokretnost.gradjanin.ime.toLowerCase();
-        return sortOrder === 'asc' ? gradjaninA.localeCompare(gradjaninB, undefined, { sensitivity: 'base' }) : gradjaninB.localeCompare(gradjaninA, undefined, { sensitivity: 'base' });
+        const stariVlasnikA = a.stariVlasnik.toLowerCase();
+        const stariVlasnikB = b.stariVlasnik.toLowerCase();
+        return sortOrder === 'asc' ? stariVlasnikA.localeCompare(stariVlasnikB, undefined, { sensitivity: 'base' }) : stariVlasnikB.localeCompare(stariVlasnikA, undefined, { sensitivity: 'base' });
+      });
+    } else if (sortField === 'noviVlasnik') {
+      this.istorijePromena.sort((a, b) => {
+        const noviVlasnikA = a.noviVlasnik.toLowerCase();
+        const noviVlasnikB = b.noviVlasnik.toLowerCase();
+        return sortOrder === 'asc' ? noviVlasnikA.localeCompare(noviVlasnikB, undefined, { sensitivity: 'base' }) : noviVlasnikB.localeCompare(noviVlasnikA, undefined, { sensitivity: 'base' });
       });
     }
   }
