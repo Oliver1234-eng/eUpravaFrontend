@@ -14,4 +14,8 @@ export class NepokretnostiService {
   public getNepokretnosti(): Observable<any> {
     return this.http.get<any>(this.apiURL);
   }
+
+  dodajNepokretnost(nepokretnost: any): Observable<any> {
+    return this.http.post('http://localhost:8080/api/katastar/nepokretnosti', nepokretnost);
+  }
 }

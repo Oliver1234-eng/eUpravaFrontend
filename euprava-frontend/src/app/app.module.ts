@@ -49,6 +49,9 @@ import { PrikazUgovoraNotarComponent } from './prikaz-ugovora-notar/prikaz-ugovo
 import { PrikazTerminaNotarComponent } from './prikaz-termina-notar/prikaz-termina-notar.component';
 import { MaticarProfileComponent } from './maticar-profile/maticar-profile.component';
 import { PregledMaticneKnjigeRodjenihComponent } from './pregled-maticne-knjige-rodjenih/pregled-maticne-knjige-rodjenih.component';
+import { DodavanjeNoveNepokretnostiComponent } from './dodavanje-nove-nepokretnosti/dodavanje-nove-nepokretnosti.component';
+import { DodavanjeIstorijePromenaComponent } from './dodavanje-istorije-promena/dodavanje-istorije-promena.component';
+import { AzuriranjePodatakaONepokretnostiComponent } from './azuriranje-podataka-o-nepokretnosti/azuriranje-podataka-o-nepokretnosti.component';
 // import { CommonModule } from '@angular/common';
 
 @NgModule({
@@ -95,6 +98,9 @@ import { PregledMaticneKnjigeRodjenihComponent } from './pregled-maticne-knjige-
     PrikazTerminaNotarComponent,
     MaticarProfileComponent,
     PregledMaticneKnjigeRodjenihComponent,
+    DodavanjeNoveNepokretnostiComponent,
+    DodavanjeIstorijePromenaComponent,
+    AzuriranjePodatakaONepokretnostiComponent,
     // FormsModule,
     // CommonModule
   ],

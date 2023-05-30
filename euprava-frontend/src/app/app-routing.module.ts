@@ -40,6 +40,9 @@ import { PrikazUgovoraNotarComponent } from './prikaz-ugovora-notar/prikaz-ugovo
 import { PrikazTerminaNotarComponent } from './prikaz-termina-notar/prikaz-termina-notar.component';
 import { MaticarProfileComponent } from './maticar-profile/maticar-profile.component';
 import { PregledMaticneKnjigeRodjenihComponent } from './pregled-maticne-knjige-rodjenih/pregled-maticne-knjige-rodjenih.component';
+import { DodavanjeNoveNepokretnostiComponent } from './dodavanje-nove-nepokretnosti/dodavanje-nove-nepokretnosti.component';
+import { DodavanjeIstorijePromenaComponent } from './dodavanje-istorije-promena/dodavanje-istorije-promena.component';
+import { AzuriranjePodatakaONepokretnostiComponent } from './azuriranje-podataka-o-nepokretnosti/azuriranje-podataka-o-nepokretnosti.component';
 
 
 const routes: Routes = [
@@ -82,6 +85,9 @@ const routes: Routes = [
   {path: 'prikaz-termina-notar', component: PrikazTerminaNotarComponent},
   {path: 'maticar-profile', component: MaticarProfileComponent},
   {path: 'pregled-maticne-knjige-rodjenih', component: PregledMaticneKnjigeRodjenihComponent},
+  {path: 'dodavanje-nove-nepokretnosti', component: DodavanjeNoveNepokretnostiComponent},
+  {path: 'dodavanje-istorije-promena', component: DodavanjeIstorijePromenaComponent},
+  {path: 'azuriranje-podataka-o-nepokretnosti', component: AzuriranjePodatakaONepokretnostiComponent},
 
 
   {path: '404', component: NotFoundComponent},
