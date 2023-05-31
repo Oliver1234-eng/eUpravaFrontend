@@ -18,8 +18,31 @@
     color: #f7f7f7; /* svetlija boja teksta prilikom hover-a */
 }
 
-h1 {
+h1, h2 {
     color: #0066cc;
     text-align: center;
     padding-top: 10px;
+}
+
+p {
+    color: #0066cc;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.card-title {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    width: 100%;
+    margin-top: 10px;
 }

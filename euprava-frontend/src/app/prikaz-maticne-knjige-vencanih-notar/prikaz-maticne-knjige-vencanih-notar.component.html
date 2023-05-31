@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="/notar-home">Aplikacija za notara</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/notar-home">Početna</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/notar-profile">Pregled profila</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/login">Odjava</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>
+<div class="container-fluid">
+  <h1>{{title}}</h1>
+  <div class="form-group row">
+    <label for="jmbgInput1" class="col-sm-2 col-form-label">JMBG žene:</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" id="jmbgInput1" [(ngModel)]="jmbgMuza">
+    </div>
+    <div class="col-sm-2">
+      <button type="button" class="btn btn-primary" (click)="pretrazi()">Pretraži po jmbg žene</button>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="jmbgInput2" class="col-sm-2 col-form-label">JMBG muža:</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" id="jmbgInput2" [(ngModel)]="jmbgZene">
+    </div>
+    <div class="col-sm-2">
+      <button type="button" class="btn btn-primary" (click)="pretraziPoJmbg()">Pretraži po jmbg muža</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4" *ngFor="let korisnik of korisnici">
+      <div class="card mb-3">
+        <div class="card-header">{{korisnik.imeMuza}} i {{korisnik.imeZene}}</div>
+        <div class="card-body">
+          <p class="card-text"><strong>JMBG muža:</strong> {{korisnik.jmbgMuza}}</p>
+          <p class="card-text"><strong>Ime muža:</strong> {{korisnik.imeMuza}}</p>
+          <p class="card-text"><strong>Prezime muža:</strong> {{korisnik.prezimeMuza}}</p>
+          <p class="card-text"><strong>JMBG žene:</strong> {{korisnik.jmbgZene}}</p>
+          <p class="card-text"><strong>Ime žene:</strong> {{korisnik.imeZene}}</p>
+          <p class="card-text"><strong>Prezime žene:</strong> {{korisnik.prezimeZene}}</p>
+          <p class="card-text"><strong>Datum zaključenja braka:</strong> {{korisnik.datumZakljucenjaBraka}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary" (click)="povratak()">Povratak na stranicu sa ugovorima</button>
+</div>

@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { MaticnaKnjigaRodjenih } from './MaticnaKnjigaRodjenih';
+import { MaticnaKnjigaRodjenih } from '../pregled-maticne-knjige-rodjenih/MaticnaKnjigaRodjenih';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-pregled-maticne-knjige-rodjenih',
-  templateUrl: './pregled-maticne-knjige-rodjenih.component.html',
-  styleUrls: ['./pregled-maticne-knjige-rodjenih.component.css']
+  selector: 'app-prikaz-maticne-knjige-rodjenih-notar',
+  templateUrl: './prikaz-maticne-knjige-rodjenih-notar.component.html',
+  styleUrls: ['./prikaz-maticne-knjige-rodjenih-notar.component.css']
 })
-export class PregledMaticneKnjigeRodjenihComponent implements OnInit {
+export class PrikazMaticneKnjigeRodjenihNotarComponent implements OnInit {
 
   // korisniciPrikaz: any[];
   jmbgFilter: string = '';
@@ -28,7 +29,7 @@ export class PregledMaticneKnjigeRodjenihComponent implements OnInit {
     new MaticnaKnjigaRodjenih('1304960120001', 'Jovana', 'Nikolić', 'Trg republike 5', 'Nikola', 'Nikolić', 'profesor', 'Milica', 'Nikolić', 'nastavnica', 'srpsko', '2204960120002', '2304960120003', 'Beograd, Stari Grad', 'Srbija', '13.04.1996. 08:45', '2', '2')
   ];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.korisnici = [];
@@ -85,4 +86,9 @@ export class PregledMaticneKnjigeRodjenihComponent implements OnInit {
       this.korisnici = [];
     }
   }
+
+  povratak() {
+    this.router.navigate(['/prikaz-ugovora-notar']);
+  }
+
 }

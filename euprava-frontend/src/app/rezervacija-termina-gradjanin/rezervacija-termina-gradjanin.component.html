@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <a class="navbar-brand ml-auto" href="/gradjanin-home">eGrađanin</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/gradjanin-home">Početna</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/gradjanin-profile">Pregled profila</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/login">Odjava</a>
+        </li>
+      </ul>
+    </div>
+</nav>
+<div class="container">
+  <div class="card mx-auto mt-5" style="width: 400px;">
+    <div class="card-body">
+      <h2 class="card-title text-center">Rezervacija termina</h2>
+      <form (ngSubmit)="azurirajTermin()" #azuriranjeForm="ngForm">
+        <div class="form-group">
+          <label for="id">ID termina:</label>
+          <input type="text" id="id" name="id" [(ngModel)]="azuriranjeTermina.id" required class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="jmbg">Vaš JMBG:</label>
+          <input type="text" id="jmbg" name="jmbg" [(ngModel)]="azuriranjeTermina.jmbg" required class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="imeIPrezimeGradjanina">Vaše ime i prezime:</label>
+          <input type="text" id="imeIPrezimeGradjanina" name="imeIPrezimeGradjanina" [(ngModel)]="azuriranjeTermina.imeIPrezimeGradjanina" required class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="napomena">Napomena: (kakav ugovor želite da potpišete):</label>
+          <input type="text" id="napomena" name="napomena" [(ngModel)]="azuriranjeTermina.napomena" required class="form-control">
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Rezerviši termin</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -52,6 +52,16 @@ import { PregledMaticneKnjigeRodjenihComponent } from './pregled-maticne-knjige-
 import { DodavanjeNoveNepokretnostiComponent } from './dodavanje-nove-nepokretnosti/dodavanje-nove-nepokretnosti.component';
 import { DodavanjeIstorijePromenaComponent } from './dodavanje-istorije-promena/dodavanje-istorije-promena.component';
 import { AzuriranjePodatakaONepokretnostiComponent } from './azuriranje-podataka-o-nepokretnosti/azuriranje-podataka-o-nepokretnosti.component';
+import { PregledMaticneKnjigeVencanihComponent } from './pregled-maticne-knjige-vencanih/pregled-maticne-knjige-vencanih.component';
+import { PregledMaticneKnjigeUmrlihComponent } from './pregled-maticne-knjige-umrlih/pregled-maticne-knjige-umrlih.component';
+import { PrikazTerminaGradjaninComponent } from './prikaz-termina-gradjanin/prikaz-termina-gradjanin.component';
+import { RezervacijaTerminaGradjaninComponent } from './rezervacija-termina-gradjanin/rezervacija-termina-gradjanin.component';
+import { DodavanjeUgovoraNotarComponent } from './dodavanje-ugovora-notar/dodavanje-ugovora-notar.component';
+import { PretragaBazePodatakaKatastraNepokretnostiNotarComponent } from './pretraga-baze-podataka-katastra-nepokretnosti-notar/pretraga-baze-podataka-katastra-nepokretnosti-notar.component';
+import { PrikazMaticneKnjigeRodjenihNotarComponent } from './prikaz-maticne-knjige-rodjenih-notar/prikaz-maticne-knjige-rodjenih-notar.component';
+import { PrikazMaticneKnjigeVencanihNotarComponent } from './prikaz-maticne-knjige-vencanih-notar/prikaz-maticne-knjige-vencanih-notar.component';
+import { PrikazMaticneKnjigeUmrlihNotarComponent } from './prikaz-maticne-knjige-umrlih-notar/prikaz-maticne-knjige-umrlih-notar.component';
+import { ProveraGradjaninaNotarComponent } from './provera-gradjanina-notar/provera-gradjanina-notar.component';
 // import { CommonModule } from '@angular/common';
 
 @NgModule({
@@ -101,6 +111,16 @@ import { AzuriranjePodatakaONepokretnostiComponent } from './azuriranje-podataka
     DodavanjeNoveNepokretnostiComponent,
     DodavanjeIstorijePromenaComponent,
     AzuriranjePodatakaONepokretnostiComponent,
+    PregledMaticneKnjigeVencanihComponent,
+    PregledMaticneKnjigeUmrlihComponent,
+    PrikazTerminaGradjaninComponent,
+    RezervacijaTerminaGradjaninComponent,
+    DodavanjeUgovoraNotarComponent,
+    PretragaBazePodatakaKatastraNepokretnostiNotarComponent,
+    PrikazMaticneKnjigeRodjenihNotarComponent,
+    PrikazMaticneKnjigeVencanihNotarComponent,
+    PrikazMaticneKnjigeUmrlihNotarComponent,
+    ProveraGradjaninaNotarComponent,
     // FormsModule,
     // CommonModule
   ],
