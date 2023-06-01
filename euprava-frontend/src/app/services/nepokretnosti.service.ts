@@ -22,4 +22,12 @@ export class NepokretnostiService {
   dodajUgovor(ugovor: any): Observable<any> {
     return this.http.post('http://localhost:8080/api/notar/ugovori', ugovor);
   }
+
+  dodajPorukuKatastru(porukaKatastru: any): Observable<any> {
+    return this.http.post('http://localhost:8080/api/katastar/porukeKatastru', porukaKatastru);
+  }
+
+  dodajPorukuNotaru(porukaNotaru: any): Observable<any> {
+    return this.http.post('http://localhost:8080/api/katastar/porukeNotaru', porukaNotaru);
+  }
 }

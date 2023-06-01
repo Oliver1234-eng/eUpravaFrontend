@@ -26,25 +26,30 @@
           <tr>
             <th>ID</th>
             <th>Datum i vreme</th>
-            <th>Status termina</th>
             <th>Ime i prezime notara</th>
-            <th>JMBG</th>
+            <th>JMBG građanina</th>
             <th>Ime i prezime građanina</th>
-            <th>Napomena</th>
+            <th>Broj parcele</th>
+            <th>JMBG vlasnika</th>
+            <th>Ime i prezime vlasnika</th>
+            <th>Srodstvo sa vlasnikom</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let termin of termini">
             <td>{{ termin.id }}</td>
             <td>{{ termin.datumIVremeSastanka }}</td>
-            <td>{{ termin.statusTermina }}</td>
             <td>{{ termin.imeIPrezimeNotara }}</td>
-            <td>{{ termin.jmbg }}</td>
+            <td>{{ termin.jmbgGradjanina }}</td>
             <td>{{ termin.imeIPrezimeGradjanina }}</td>
-            <td>{{ termin.napomena }}</td>
+            <td>{{ termin.brojParcele }}</td>
+            <td>{{ termin.jmbgVlasnika }}</td>
+            <td>{{ termin.imeIPrezimeVlasnika }}</td>
+            <td>{{ termin.srodstvo }}</td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
+  <button class="btn btn-primary" (click)="dodajNoviUgovor()">Napravi ugovor za termin</button>
 </div>

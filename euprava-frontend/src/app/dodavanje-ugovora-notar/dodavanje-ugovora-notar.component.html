@@ -46,6 +46,7 @@
               <label for="brojParcele">Broj parcele:</label>
               <input type="text" id="brojParcele" name="brojParcele" [(ngModel)]="ugovor.brojParcele" required class="form-control">
             </div>
+            <button class="btn btn-primary" (click)="openNewTab()">Pretraži parcele iz katastra</button>
             <div class="form-group">
               <label for="stariVlasnik">Stari vlasnik parcele:</label>
               <input type="text" id="stariVlasnik" name="stariVlasnik" [(ngModel)]="ugovor.stariVlasnik" required class="form-control">
@@ -54,7 +55,9 @@
               <label for="noviVlasnik">Novi vlasnik parcele:</label>
               <input type="text" id="noviVlasnik" name="noviVlasnik" [(ngModel)]="ugovor.noviVlasnik" required class="form-control">
             </div>
-            
+            <button class="btn btn-primary" (click)="openNewTab2()">Pretraži korisnike u matičnoj knjizi rođenih</button>
+            <button class="btn btn-primary" (click)="openNewTab3()">Pretraži korisnike u matičnoj knjizi venčanih</button>
+            <button class="btn btn-primary" (click)="openNewTab4()">Pretraži korisnike u matičnoj knjizi umrlih</button>
             <button type="submit" class="btn btn-primary">Dodaj ugovor</button>
           </form>
         </div>

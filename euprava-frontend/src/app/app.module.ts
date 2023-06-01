@@ -62,6 +62,12 @@ import { PrikazMaticneKnjigeRodjenihNotarComponent } from './prikaz-maticne-knji
 import { PrikazMaticneKnjigeVencanihNotarComponent } from './prikaz-maticne-knjige-vencanih-notar/prikaz-maticne-knjige-vencanih-notar.component';
 import { PrikazMaticneKnjigeUmrlihNotarComponent } from './prikaz-maticne-knjige-umrlih-notar/prikaz-maticne-knjige-umrlih-notar.component';
 import { ProveraGradjaninaNotarComponent } from './provera-gradjanina-notar/provera-gradjanina-notar.component';
+import { PotvrdjivanjeUgovoraNotarComponent } from './potvrdjivanje-ugovora-notar/potvrdjivanje-ugovora-notar.component';
+import { SlanjePodatakaUKatastarComponent } from './slanje-podataka-u-katastar/slanje-podataka-u-katastar.component';
+import { PorukaKatastruComponent } from './poruka-katastru/poruka-katastru.component';
+import { PorukaNotaruComponent } from './poruka-notaru/poruka-notaru.component';
+import { DodavanjePorukeKatastruComponent } from './dodavanje-poruke-katastru/dodavanje-poruke-katastru.component';
+import { DodavanjePorukeNotaruComponent } from './dodavanje-poruke-notaru/dodavanje-poruke-notaru.component';
 // import { CommonModule } from '@angular/common';
 
 @NgModule({
@@ -121,6 +127,12 @@ import { ProveraGradjaninaNotarComponent } from './provera-gradjanina-notar/prov
     PrikazMaticneKnjigeVencanihNotarComponent,
     PrikazMaticneKnjigeUmrlihNotarComponent,
     ProveraGradjaninaNotarComponent,
+    PotvrdjivanjeUgovoraNotarComponent,
+    SlanjePodatakaUKatastarComponent,
+    PorukaKatastruComponent,
+    PorukaNotaruComponent,
+    DodavanjePorukeKatastruComponent,
+    DodavanjePorukeNotaruComponent,
     // FormsModule,
     // CommonModule
   ],

@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <a class="navbar-brand ml-auto" href="/notar-home">Aplikacija za notara</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/notar-home">Početna</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/notar-profile">Pregled profila</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/login">Odjava</a>
+        </li>
+      </ul>
+    </div>
+</nav>
+<div class="container">
+    <div class="card mx-auto mt-5" style="width: 400px;">
+      <div class="card-body">
+        <h2 class="card-title text-center">Overavanje ugovora</h2>
+        <form (ngSubmit)="overiUgovor()" #azuriranjeForm="ngForm">
+          <div class="form-group">
+            <label for="id">ID ugovora:</label>
+            <input type="text" id="id" name="id" [(ngModel)]="azuriranjeUgovora.id" required class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="overen">Overen (da/ne):</label>
+            <input type="text" id="overen" name="overen" [(ngModel)]="azuriranjeUgovora.overen" required class="form-control" readonly>
+          </div>
+          
+          <button type="submit" class="btn btn-primary">Overi ugovor</button>
+        </form>
+      </div>
+    </div>
+  </div>

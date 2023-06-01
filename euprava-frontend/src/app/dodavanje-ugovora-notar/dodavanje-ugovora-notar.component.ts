@@ -35,4 +35,23 @@ export class DodavanjeUgovoraNotarComponent implements OnInit {
       );
   }
 
+  openNewTab() {
+    const url = 'http://localhost:4200/pretraga-baze-podataka-katastra-nepokretnosti-notar';
+    window.open(url, '_blank');
+  }
+
+  openNewTab2() {
+    const url = 'http://localhost:4200/prikaz-maticne-knjige-rodjenih-notar';
+    window.open(url, '_blank');
+  }
+
+  openNewTab3() {
+    const url = 'http://localhost:4200/prikaz-maticne-knjige-vencanih-notar';
+    window.open(url, '_blank');
+  }
+
+  openNewTab4() {
+    const url = 'http://localhost:4200/prikaz-maticne-knjige-umrlih-notar';
+    window.open(url, '_blank');
+  }
 }

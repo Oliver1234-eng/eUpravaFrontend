@@ -12,13 +12,15 @@ export class PregledMaticneKnjigeVencanihComponent implements OnInit {
   jmbgZene: string = '';
 
   originalniKorisnici: MaticnaKnjigaVencanih[] = [
-    new MaticnaKnjigaVencanih('1001956630001', 'Ana', 'Popović', '1502957780001', 'Ivan', 'Petrović', '01.05.2023.')
+    new MaticnaKnjigaVencanih('0404040404040', 'Dragana', 'Pavlovic', '0505050505050', 'Predrag', 'Zivotic', '01.04.2023.'),
+    new MaticnaKnjigaVencanih('0606060606060', 'Nevena', 'Mileusnic', '0707070707070', 'Vojislav', 'Petric', '01.05.2023.')
   ];
 
   title = 'Prikaz matične knjige venčanih';
 
   korisnici: MaticnaKnjigaVencanih[] = [
-    new MaticnaKnjigaVencanih('1001956630001', 'Ana', 'Popović', '1502957780001', 'Ivan', 'Petrović', '01.05.2023.')
+    new MaticnaKnjigaVencanih('0404040404040', 'Dragana', 'Pavlovic', '0505050505050', 'Predrag', 'Zivotic', '01.04.2023.'),
+    new MaticnaKnjigaVencanih('0606060606060', 'Nevena', 'Mileusnic', '0707070707070', 'Vojislav', 'Petric', '01.05.2023.')
   ];
 
   constructor() { }

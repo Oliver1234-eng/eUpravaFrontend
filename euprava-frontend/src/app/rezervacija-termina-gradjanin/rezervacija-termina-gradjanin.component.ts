@@ -19,9 +19,12 @@ export class RezervacijaTerminaGradjaninComponent implements OnInit {
   azurirajTermin() {
     const requestBody = {
       id: this.azuriranjeTermina.id,
-      jmbg: this.azuriranjeTermina.jmbg,
+      jmbgGradjanina: this.azuriranjeTermina.jmbgGradjanina,
       imeIPrezimeGradjanina: this.azuriranjeTermina.imeIPrezimeGradjanina,
-      napomena: this.azuriranjeTermina.napomena
+      brojParcele: this.azuriranjeTermina.brojParcele,
+      jmbgVlasnika: this.azuriranjeTermina.jmbgVlasnika,
+      imeIPrezimeVlasnika: this.azuriranjeTermina.imeIPrezimeVlasnika,
+      srodstvo: this.azuriranjeTermina.srodstvo
     };
   
     this.http.put('http://localhost:8080/api/notar/termini/updateTerminGradjanin', requestBody)

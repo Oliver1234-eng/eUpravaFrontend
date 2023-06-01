@@ -35,4 +35,9 @@ export class PrikazUgovoraNotarComponent implements OnInit {
   proveraGradjanina() {
     this.router.navigate(['/provera-gradjanina-notar']);
   }
+
+  potvrdiUgovor() {
+    const url = 'http://localhost:4200/potvrdjivanje-ugovora-notar';
+    window.open(url, '_blank');
+  }
 }

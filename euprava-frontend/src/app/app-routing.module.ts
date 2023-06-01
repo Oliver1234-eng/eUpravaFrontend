@@ -53,6 +53,12 @@ import { PrikazMaticneKnjigeRodjenihNotarComponent } from './prikaz-maticne-knji
 import { PrikazMaticneKnjigeVencanihNotarComponent } from './prikaz-maticne-knjige-vencanih-notar/prikaz-maticne-knjige-vencanih-notar.component';
 import { PrikazMaticneKnjigeUmrlihNotarComponent } from './prikaz-maticne-knjige-umrlih-notar/prikaz-maticne-knjige-umrlih-notar.component';
 import { ProveraGradjaninaNotarComponent } from './provera-gradjanina-notar/provera-gradjanina-notar.component';
+import { PotvrdjivanjeUgovoraNotarComponent } from './potvrdjivanje-ugovora-notar/potvrdjivanje-ugovora-notar.component';
+import { SlanjePodatakaUKatastarComponent } from './slanje-podataka-u-katastar/slanje-podataka-u-katastar.component';
+import { PorukaKatastruComponent } from './poruka-katastru/poruka-katastru.component';
+import { PorukaNotaruComponent } from './poruka-notaru/poruka-notaru.component';
+import { DodavanjePorukeKatastruComponent } from './dodavanje-poruke-katastru/dodavanje-poruke-katastru.component';
+import { DodavanjePorukeNotaruComponent } from './dodavanje-poruke-notaru/dodavanje-poruke-notaru.component';
 
 
 const routes: Routes = [
@@ -108,6 +114,12 @@ const routes: Routes = [
   {path: 'prikaz-maticne-knjige-vencanih-notar', component: PrikazMaticneKnjigeVencanihNotarComponent},
   {path: 'prikaz-maticne-knjige-umrlih-notar', component: PrikazMaticneKnjigeUmrlihNotarComponent},
   {path: 'provera-gradjanina-notar', component: ProveraGradjaninaNotarComponent},
+  {path: 'potvrdjivanje-ugovora-notar', component: PotvrdjivanjeUgovoraNotarComponent},
+  {path: 'slanje-podataka-u-katastar', component: SlanjePodatakaUKatastarComponent},
+  {path: 'poruka-katastru', component: PorukaKatastruComponent},
+  {path: 'poruka-notaru', component: PorukaNotaruComponent},
+  {path: 'dodavanje-poruke-katastru', component: DodavanjePorukeKatastruComponent},
+  {path: 'dodavanje-poruke-notaru', component: DodavanjePorukeNotaruComponent},
 
   {path: '404', component: NotFoundComponent},
   {path: '**', redirectTo: '404'},

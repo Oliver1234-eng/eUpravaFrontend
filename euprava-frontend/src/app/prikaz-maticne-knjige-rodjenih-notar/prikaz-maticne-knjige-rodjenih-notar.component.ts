@@ -16,17 +16,23 @@ export class PrikazMaticneKnjigeRodjenihNotarComponent implements OnInit {
   prezimeFilter: string = '';
 
   originalniKorisnici: MaticnaKnjigaRodjenih[] = [
-    new MaticnaKnjigaRodjenih('1001956630001', 'Ana', 'Popović', 'Kralja Petra I 23', 'Marko', 'Popović', 'inženjer', 'Jelena', 'Popović', 'profesor', 'srpsko', '1301956630002', '1401956630003', 'Beograd, Stari Grad', 'Srbija', '10.01.1995. 12:30', '2', '2'),
-    new MaticnaKnjigaRodjenih('1502957780001', 'Ivan', 'Petrović', 'Bulevar Kralja Aleksandra 87', 'Petar', 'Petrović', 'advokat', 'Jelena', 'Petrović', 'lekar', 'srpsko', '2302957780002', '2402957780003', 'Beograd, Vračar', 'Srbija', '15.02.1995. 15:10', '2', '2'),
-    new MaticnaKnjigaRodjenih('1304960120001', 'Jovana', 'Nikolić', 'Trg republike 5', 'Nikola', 'Nikolić', 'profesor', 'Milica', 'Nikolić', 'nastavnica', 'srpsko', '2204960120002', '2304960120003', 'Beograd, Stari Grad', 'Srbija', '13.04.1996. 08:45', '2', '2')
+    new MaticnaKnjigaRodjenih('1111111111111', 'Pera', 'Peric', 'Bulevar kralja Aleksandra 123', 'Stevan', 'Peric', 'inženjer', 'Milana', 'Peric', 'profesor', 'srpsko', '7777777777777', '8888888888888', 'Beograd, Zvezdara', 'Srbija', '01.01.1950. 12:30', '2', '2'),
+    new MaticnaKnjigaRodjenih('2222222222222', 'Zika', 'Peric', 'Knez Mihailova 55', 'Pera', 'Peric', 'advokat', 'Milena', 'Peric', 'lekar', 'srpsko', '1111111111111', '9999999999999', 'Beograd, Stari Grad', 'Srbija', '01.02.1955. 15:10', '2', '2'),
+    new MaticnaKnjigaRodjenih('3333333333333', 'Jovan', 'Jovanovic', 'Takovska ulica 17', 'Nikola', 'Jovanovic', 'profesor', 'Tatjana', 'Jovanovic', 'nastavnica', 'srpsko', '3030303030303', '4040404040404', 'Beograd, Vračar', 'Srbija', '01.03.1975. 08:45', '2', '2'),
+    new MaticnaKnjigaRodjenih('4444444444444', 'Milan', 'Jovanovic', 'Cara Dušana 89', 'Jovan', 'Jovanovic', 'profesor', 'Suzana', 'Nikolić', 'nastavnica', 'srpsko', '3333333333333', '5050505050505', 'Beograd, Dorćol', 'Srbija', '01.04.1980. 09:45', '2', '2'),
+    new MaticnaKnjigaRodjenih('5555555555555', 'Dejan', 'Peric', 'Ulica Kralja Petra 67', 'Zika', 'Peric', 'profesor', 'Milica', 'Peric', 'nastavnica', 'srpsko', '2222222222222', '2020202020202', 'Beograd, Stari Grad', 'Srbija', '01.05.2000. 10:15', '2', '0'),
+    new MaticnaKnjigaRodjenih('6666666666666', 'Miroslav', 'Jovanovic', 'Kneza Miloša 12', 'Milan', 'Jovanovic', 'profesor', 'Aleksandra', 'Jovanovic', 'nastavnica', 'srpsko', '4444444444444', '6060606060606', 'Beograd, Savski venac', 'Srbija', '01.06.2000. 13:30', '2', '0'),
   ];
 
   title = 'Prikaz matične knjige rođenih';
 
   korisnici: MaticnaKnjigaRodjenih[] = [
-    new MaticnaKnjigaRodjenih('1001956630001', 'Ana', 'Popović', 'Kralja Petra I 23', 'Marko', 'Popović', 'inženjer', 'Jelena', 'Popović', 'profesor', 'srpsko', '1301956630002', '1401956630003', 'Beograd, Stari Grad', 'Srbija', '10.01.1995. 12:30', '2', '2'),
-    new MaticnaKnjigaRodjenih('1502957780001', 'Ivan', 'Petrović', 'Bulevar Kralja Aleksandra 87', 'Petar', 'Petrović', 'advokat', 'Jelena', 'Petrović', 'lekar', 'srpsko', '2302957780002', '2402957780003', 'Beograd, Vračar', 'Srbija', '15.02.1995. 15:10', '2', '2'),
-    new MaticnaKnjigaRodjenih('1304960120001', 'Jovana', 'Nikolić', 'Trg republike 5', 'Nikola', 'Nikolić', 'profesor', 'Milica', 'Nikolić', 'nastavnica', 'srpsko', '2204960120002', '2304960120003', 'Beograd, Stari Grad', 'Srbija', '13.04.1996. 08:45', '2', '2')
+    new MaticnaKnjigaRodjenih('1111111111111', 'Pera', 'Peric', 'Bulevar kralja Aleksandra 123', 'Stevan', 'Peric', 'inženjer', 'Milana', 'Peric', 'profesor', 'srpsko', '7777777777777', '8888888888888', 'Beograd, Zvezdara', 'Srbija', '01.01.1950. 12:30', '2', '2'),
+    new MaticnaKnjigaRodjenih('2222222222222', 'Zika', 'Peric', 'Knez Mihailova 55', 'Pera', 'Peric', 'advokat', 'Milena', 'Peric', 'lekar', 'srpsko', '1111111111111', '9999999999999', 'Beograd, Stari Grad', 'Srbija', '01.02.1955. 15:10', '2', '2'),
+    new MaticnaKnjigaRodjenih('3333333333333', 'Jovan', 'Jovanovic', 'Takovska ulica 17', 'Nikola', 'Jovanovic', 'profesor', 'Tatjana', 'Jovanovic', 'nastavnica', 'srpsko', '3030303030303', '4040404040404', 'Beograd, Vračar', 'Srbija', '01.03.1975. 08:45', '2', '2'),
+    new MaticnaKnjigaRodjenih('4444444444444', 'Milan', 'Jovanovic', 'Cara Dušana 89', 'Jovan', 'Jovanovic', 'profesor', 'Suzana', 'Nikolić', 'nastavnica', 'srpsko', '3333333333333', '5050505050505', 'Beograd, Dorćol', 'Srbija', '01.04.1980. 09:45', '2', '2'),
+    new MaticnaKnjigaRodjenih('5555555555555', 'Dejan', 'Peric', 'Ulica Kralja Petra 67', 'Zika', 'Peric', 'profesor', 'Milica', 'Peric', 'nastavnica', 'srpsko', '2222222222222', '2020202020202', 'Beograd, Stari Grad', 'Srbija', '01.05.2000. 10:15', '2', '0'),
+    new MaticnaKnjigaRodjenih('6666666666666', 'Miroslav', 'Jovanovic', 'Kneza Miloša 12', 'Milan', 'Jovanovic', 'profesor', 'Aleksandra', 'Jovanovic', 'nastavnica', 'srpsko', '4444444444444', '6060606060606', 'Beograd, Savski venac', 'Srbija', '01.06.2000. 13:30', '2', '0'),
   ];
 
   constructor(private router: Router) { }

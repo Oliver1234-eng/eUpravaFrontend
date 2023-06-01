@@ -18,7 +18,7 @@
     </div>
 </nav>
 <div class="container">
-    <h1>Prikaz istorije promena podataka o svim zemljištima</h1>
+    <h1>Pretraga baze podataka katastra nepokretnosti</h1>
     <div class="row">
     <div class="col-md-6">
       <div class="input-group mb-3">
@@ -84,7 +84,7 @@
           <i *ngIf="isSortOrderNone('stariVlasnik')" class="fas fa-sort"></i>
         </th>
         <th scope="col" (click)="toggleSortOrder('noviVlasnik')">
-          Novi vlasnik nepokretnosti
+          Trenutni vlasnik nepokretnosti
           <i *ngIf="isSortOrderAsc('noviVlasnik')" class="fas fa-sort-up"></i>
           <i *ngIf="isSortOrderDesc('noviVlasnik')" class="fas fa-sort-down"></i>
           <i *ngIf="isSortOrderNone('noviVlasnik')" class="fas fa-sort"></i>

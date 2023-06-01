@@ -27,16 +27,28 @@
           <input type="text" id="id" name="id" [(ngModel)]="azuriranjeTermina.id" required class="form-control">
         </div>
         <div class="form-group">
-          <label for="jmbg">Vaš JMBG:</label>
-          <input type="text" id="jmbg" name="jmbg" [(ngModel)]="azuriranjeTermina.jmbg" required class="form-control">
+          <label for="jmbgGradjanina">Vaš JMBG:</label>
+          <input type="text" id="jmbgGradjanina" name="jmbgGradjanina" [(ngModel)]="azuriranjeTermina.jmbgGradjanina" required class="form-control">
         </div>
         <div class="form-group">
           <label for="imeIPrezimeGradjanina">Vaše ime i prezime:</label>
           <input type="text" id="imeIPrezimeGradjanina" name="imeIPrezimeGradjanina" [(ngModel)]="azuriranjeTermina.imeIPrezimeGradjanina" required class="form-control">
         </div>
         <div class="form-group">
-          <label for="napomena">Napomena: (kakav ugovor želite da potpišete):</label>
-          <input type="text" id="napomena" name="napomena" [(ngModel)]="azuriranjeTermina.napomena" required class="form-control">
+          <label for="brojParcele">Broj parcele za prenos zemljišta:</label>
+          <input type="text" id="brojParcele" name="brojParcele" [(ngModel)]="azuriranjeTermina.brojParcele" required class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="jmbgVlasnika">JMBG sadašnjeg vlasnika parcele:</label>
+          <input type="text" id="jmbgVlasnika" name="jmbgVlasnika" [(ngModel)]="azuriranjeTermina.jmbgVlasnika" required class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="imeIPrezimeVlasnika">Ime i prezime sadašnjeg vlasnika:</label>
+          <input type="text" id="imeIPrezimeVlasnika" name="imeIPrezimeVlasnika" [(ngModel)]="azuriranjeTermina.imeIPrezimeVlasnika" required class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="srodstvo">Vaše srodstvo sa sadašnjim vlasnikom:</label>
+          <input type="text" id="srodstvo" name="srodstvo" [(ngModel)]="azuriranjeTermina.srodstvo" required class="form-control">
         </div>
         
         <button type="submit" class="btn btn-primary">Rezerviši termin</button>
