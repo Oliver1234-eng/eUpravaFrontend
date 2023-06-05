@@ -59,6 +59,7 @@ import { PorukaKatastruComponent } from './poruka-katastru/poruka-katastru.compo
 import { PorukaNotaruComponent } from './poruka-notaru/poruka-notaru.component';
 import { DodavanjePorukeKatastruComponent } from './dodavanje-poruke-katastru/dodavanje-poruke-katastru.component';
 import { DodavanjePorukeNotaruComponent } from './dodavanje-poruke-notaru/dodavanje-poruke-notaru.component';
+import { DodavanjeTerminaNotarComponent } from './dodavanje-termina-notar/dodavanje-termina-notar.component';
 
 
 const routes: Routes = [
@@ -120,7 +121,7 @@ const routes: Routes = [
   {path: 'poruka-notaru', component: PorukaNotaruComponent},
   {path: 'dodavanje-poruke-katastru', component: DodavanjePorukeKatastruComponent},
   {path: 'dodavanje-poruke-notaru', component: DodavanjePorukeNotaruComponent},
-
+  {path: 'dodavanje-termina-notar', component: DodavanjeTerminaNotarComponent},
   {path: '404', component: NotFoundComponent},
   {path: '**', redirectTo: '404'},
 ];

@@ -14,7 +14,7 @@ export class PrikazTerminaNotarComponent implements OnInit {
   constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
-    this.http.get<any>('http://localhost:8080/api/notar/termini').subscribe(
+    this.http.get<any>('http://localhost:8080/api/termin/all/').subscribe(
       data => {
         this.termini = data;
       },
@@ -26,6 +26,11 @@ export class PrikazTerminaNotarComponent implements OnInit {
 
   dodajNoviUgovor() {
     const url = 'http://localhost:4200/dodavanje-ugovora-notar';
+    window.open(url, '_blank');
+  }
+
+  dodajNoviTermin() {
+    const url = 'http://localhost:4200/dodavanje-termina-notar';
     window.open(url, '_blank');
   }
 

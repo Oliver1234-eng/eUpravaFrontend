@@ -68,7 +68,17 @@ import { PorukaKatastruComponent } from './poruka-katastru/poruka-katastru.compo
 import { PorukaNotaruComponent } from './poruka-notaru/poruka-notaru.component';
 import { DodavanjePorukeKatastruComponent } from './dodavanje-poruke-katastru/dodavanje-poruke-katastru.component';
 import { DodavanjePorukeNotaruComponent } from './dodavanje-poruke-notaru/dodavanje-poruke-notaru.component';
+import { DodavanjeTerminaNotarComponent } from './dodavanje-termina-notar/dodavanje-termina-notar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { CommonModule } from '@angular/common';
+import { MatFormFieldModule } from '@angular/material/form-field'; 
+import { MatDatepickerModule } from '@angular/material/datepicker'; 
+import { MatNativeDateModule } from '@angular/material/core'; 
+import { MatInputModule } from '@angular/material/input'; 
+import { MatDialogModule } from '@angular/material/dialog'; 
+import { MatButtonModule } from '@angular/material/button'; 
+import { MatButtonToggleModule } from '@angular/material/button-toggle'; 
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -133,6 +143,7 @@ import { DodavanjePorukeNotaruComponent } from './dodavanje-poruke-notaru/dodava
     PorukaNotaruComponent,
     DodavanjePorukeKatastruComponent,
     DodavanjePorukeNotaruComponent,
+    DodavanjeTerminaNotarComponent,
     // FormsModule,
     // CommonModule
   ],
@@ -142,7 +153,22 @@ import { DodavanjePorukeNotaruComponent } from './dodavanje-poruke-notaru/dodava
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    MatFormFieldModule, 
+    MatDatepickerModule, 
+    MatNativeDateModule, 
+    MatInputModule, 
+    MatDialogModule, 
+    MatButtonModule, 
+    MatButtonToggleModule, 
+    BrowserModule,
+  AppRoutingModule,
+  BrowserAnimationsModule,
+  FormsModule,
+  ReactiveFormsModule,
+  MatSelectModule,
+  MatFormFieldModule,
     RouterModule.forChild([{ path: 'login', component: LoginComponent }]),
+    BrowserAnimationsModule,
 
     // ToastrModule.forRoot({
     //   positionClass :'toast-bottom-right'
