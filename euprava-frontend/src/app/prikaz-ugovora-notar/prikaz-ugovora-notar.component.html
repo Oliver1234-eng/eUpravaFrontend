@@ -28,29 +28,31 @@
             <th>Ime i prezime notara</th>
             <th>Vrsta ugovora</th>
             <th>Datum overe</th>
-            <th>Overen</th>
             <th>Broj parcele</th>
             <th>Stari vlasnik</th>
             <th>Novi vlasnik</th>
+            <th>Potpis</th>
+            <th>Dokument</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let ugovor of ugovori">
             <td>{{ ugovor.id }}</td>
-            <td>{{ ugovor.notar }}</td>
+            <td>{{ ugovor.notar?.ime }}<br>{{ ugovor.notar?.prezime }}</td>
             <td>{{ ugovor.vrstaUgovora }}</td>
-            <td>{{ ugovor.datumOvere }}</td>
-            <td>{{ ugovor.overen }}</td>
+            <td>{{ ugovor.datumOvereUgovora }}</td>
             <td>{{ ugovor.brojParcele }}</td>
             <td>{{ ugovor.stariVlasnik }}</td>
             <td>{{ ugovor.noviVlasnik }}</td>
+            <td>{{ ugovor.potpis }}</td>
+            <td>{{ ugovor.dokument }}</td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
-  <button class="btn btn-primary" (click)="dodajNoviUgovor()">Dodavanje novog ugovora</button><br><br>
-  <button class="btn btn-primary" (click)="potvrdiUgovor()">Overi ugovor</button>
+  <button class="btn btn-primary" (click)="dodajNoviUgovor()">Overi ugovor</button><br><br>
+  <!-- <button class="btn btn-primary" (click)="potvrdiUgovor()">Overi ugovor</button> -->
   <!-- <button class="btn btn-primary" (click)="proveraNepokretnosti()">Provera podataka o nepokretnosti</button>
   <button class="btn btn-primary" (click)="proveraGradjanina()">Provera podataka o gradjaninu</button> -->
 </div>

@@ -10,28 +10,38 @@ import { Router } from '@angular/router';
 export class RezervacijaTerminaGradjaninComponent implements OnInit {
 
   azuriranjeTermina: any = {};
+  vrsteUgovora: any[] = [
+    { name: 'OVERA_NEPOKRETNOSTI', },
+    { name: 'OVERA_POTPISA', },
+    { name: 'OVERA_DOKUMENTA', },
+];
+termini: any[] = [];
 
   constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
+    this.http.get<any>('http://localhost:8080/api/termin/slobodniTermini/').subscribe(
+      data => {
+        this.termini = data;
+      },
+      error => {
+        console.error(error);
+      }
+    );
   }
-
+ 
   azurirajTermin() {
     const requestBody = {
       id: this.azuriranjeTermina.id,
-      jmbgGradjanina: this.azuriranjeTermina.jmbgGradjanina,
-      imeIPrezimeGradjanina: this.azuriranjeTermina.imeIPrezimeGradjanina,
-      brojParcele: this.azuriranjeTermina.brojParcele,
-      jmbgVlasnika: this.azuriranjeTermina.jmbgVlasnika,
-      imeIPrezimeVlasnika: this.azuriranjeTermina.imeIPrezimeVlasnika,
-      srodstvo: this.azuriranjeTermina.srodstvo
+      stranka_id: this.azuriranjeTermina.idGradjanina,
+      vrstaUgovora: this.azuriranjeTermina.vrstaUgovora,
     };
   
-    this.http.put('http://localhost:8080/api/notar/termini/updateTerminGradjanin', requestBody)
+    this.http.post('http://localhost:8080/api/termin/notar/zakazi/', requestBody)
       .subscribe(
         (response) => {
           console.log(response);
-          alert("Termin je rezervisan!")
+          alert("Termin je zakazan!")
           this.router.navigate(['/prikaz-termina-gradjanin']);
         },
         (error) => {
