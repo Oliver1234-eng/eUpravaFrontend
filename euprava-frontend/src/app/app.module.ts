@@ -79,6 +79,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button'; 
 import { MatButtonToggleModule } from '@angular/material/button-toggle'; 
 import { MatSelectModule } from '@angular/material/select';
+import { AddMaticnaKnjigaRodjenihComponent } from './add-maticna-knjiga-rodjenih/add-maticna-knjiga-rodjenih.component';
+import { AddMaticnaKnjigaVencanihComponent } from './add-maticna-knjiga-vencanih/add-maticna-knjiga-vencanih.component';
+import { AddMaticnaKnjigaUmrlihComponent } from './add-maticna-knjiga-umrlih/add-maticna-knjiga-umrlih.component';
 
 @NgModule({
   declarations: [
@@ -144,6 +147,9 @@ import { MatSelectModule } from '@angular/material/select';
     DodavanjePorukeKatastruComponent,
     DodavanjePorukeNotaruComponent,
     DodavanjeTerminaNotarComponent,
+    AddMaticnaKnjigaRodjenihComponent,
+    AddMaticnaKnjigaVencanihComponent,
+    AddMaticnaKnjigaUmrlihComponent,
     // FormsModule,
     // CommonModule
   ],

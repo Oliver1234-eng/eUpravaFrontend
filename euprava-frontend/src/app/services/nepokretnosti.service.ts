@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class NepokretnostiService {
 
-  private apiURL = 'http://localhost:8080/api/katastar/nepokretnosti';
+  private apiURL = 'http://localhost:8081/api/katastar/nepokretnosti';
 
   constructor(private http: HttpClient) { }
 
@@ -16,18 +16,18 @@ export class NepokretnostiService {
   }
 
   dodajNepokretnost(nepokretnost: any): Observable<any> {
-    return this.http.post('http://localhost:8080/api/katastar/nepokretnosti', nepokretnost);
+    return this.http.post('http://localhost:8081/api/katastar/nepokretnosti', nepokretnost);
   }
 
   dodajUgovor(ugovor: any): Observable<any> {
-    return this.http.post('http://localhost:8080/api/notar/ugovori', ugovor);
+    return this.http.post('http://localhost:8083/api/notar/ugovori', ugovor);
   }
 
   dodajPorukuKatastru(porukaKatastru: any): Observable<any> {
-    return this.http.post('http://localhost:8080/api/katastar/porukeKatastru', porukaKatastru);
+    return this.http.post('http://localhost:8081/api/katastar/porukeKatastru', porukaKatastru);
   }
 
   dodajPorukuNotaru(porukaNotaru: any): Observable<any> {
-    return this.http.post('http://localhost:8080/api/katastar/porukeNotaru', porukaNotaru);
+    return this.http.post('http://localhost:8081/api/katastar/porukeNotaru', porukaNotaru);
   }
 }

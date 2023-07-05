@@ -23,7 +23,7 @@ export class PotvrdjivanjeUgovoraNotarComponent implements OnInit {
       overen: this.azuriranjeUgovora.overen
     };
   
-    this.http.put('http://localhost:8080/api/notar/ugovori/overiUgovor', requestBody)
+    this.http.put('http://localhost:8083/api/notar/ugovori/overiUgovor', requestBody)
       .subscribe(
         (response) => {
           console.log(response);

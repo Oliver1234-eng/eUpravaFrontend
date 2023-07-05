@@ -60,6 +60,9 @@ import { PorukaNotaruComponent } from './poruka-notaru/poruka-notaru.component';
 import { DodavanjePorukeKatastruComponent } from './dodavanje-poruke-katastru/dodavanje-poruke-katastru.component';
 import { DodavanjePorukeNotaruComponent } from './dodavanje-poruke-notaru/dodavanje-poruke-notaru.component';
 import { DodavanjeTerminaNotarComponent } from './dodavanje-termina-notar/dodavanje-termina-notar.component';
+import { AddMaticnaKnjigaRodjenihComponent } from './add-maticna-knjiga-rodjenih/add-maticna-knjiga-rodjenih.component';
+import { AddMaticnaKnjigaVencanihComponent } from './add-maticna-knjiga-vencanih/add-maticna-knjiga-vencanih.component';
+import { AddMaticnaKnjigaUmrlihComponent } from './add-maticna-knjiga-umrlih/add-maticna-knjiga-umrlih.component';
 
 
 const routes: Routes = [
@@ -105,6 +108,9 @@ const routes: Routes = [
   {path: 'dodavanje-nove-nepokretnosti', component: DodavanjeNoveNepokretnostiComponent},
   {path: 'dodavanje-istorije-promena', component: DodavanjeIstorijePromenaComponent},
   {path: 'azuriranje-podataka-o-nepokretnosti', component: AzuriranjePodatakaONepokretnostiComponent},
+  {path: 'add-maticna-knjiga-rodjenih', component: AddMaticnaKnjigaRodjenihComponent},
+  {path: 'add-maticna-knjiga-vencanih', component: AddMaticnaKnjigaVencanihComponent},
+  {path: 'add-maticna-knjiga-umrlih', component: AddMaticnaKnjigaUmrlihComponent},
   {path: 'pregled-maticne-knjige-vencanih', component: PregledMaticneKnjigeVencanihComponent},
   {path: 'pregled-maticne-knjige-umrlih', component: PregledMaticneKnjigeUmrlihComponent},
   {path: 'prikaz-termina-gradjanin', component: PrikazTerminaGradjaninComponent},

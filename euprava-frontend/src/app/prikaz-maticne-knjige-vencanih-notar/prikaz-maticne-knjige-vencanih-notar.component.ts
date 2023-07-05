@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MaticnaKnjigaVencanih } from '../pregled-maticne-knjige-vencanih/MaticnaKnjigaVencanih';
 import { Router } from '@angular/router';
+import { MaticarService } from '../maticar.service';
 
 @Component({
   selector: 'app-prikaz-maticne-knjige-vencanih-notar',
@@ -11,18 +12,15 @@ export class PrikazMaticneKnjigeVencanihNotarComponent implements OnInit {
 
   jmbgMuza: string = '';
   jmbgZene: string = '';
-
-  originalniKorisnici: MaticnaKnjigaVencanih[] = [
-    new MaticnaKnjigaVencanih('0404040404040', 'Dragana', 'Pavlovic', '0505050505050', 'Predrag', 'Zivotic', '01.04.2023.')
-  ];
+  korisnici: MaticnaKnjigaVencanih[];
 
   title = 'Prikaz matične knjige venčanih';
 
-  korisnici: MaticnaKnjigaVencanih[] = [
-    new MaticnaKnjigaVencanih('0404040404040', 'Dragana', 'Pavlovic', '0505050505050', 'Predrag', 'Zivotic', '01.04.2023.')
-  ];
-
-  constructor(private router: Router) { }
+  constructor(private router: Router, private maticarService: MaticarService) {
+    this.maticarService.getAllKnjigeVencanih().subscribe(korisnik => {
+      this.korisnici = korisnik;
+    })
+   }
 
   ngOnInit(): void {
     this.korisnici = [];
@@ -30,7 +28,7 @@ export class PrikazMaticneKnjigeVencanihNotarComponent implements OnInit {
 
   pretrazi(): void {
     if (this.jmbgMuza) {
-      const filtriraniKorisnici = this.originalniKorisnici.filter(korisnik => korisnik.jmbgMuza.includes(this.jmbgMuza));
+      const filtriraniKorisnici = this.korisnici.filter(korisnik => korisnik.jmbgMuza.includes(this.jmbgMuza));
       if (filtriraniKorisnici.length > 0) {
         this.korisnici = filtriraniKorisnici;
       } else {
@@ -43,7 +41,7 @@ export class PrikazMaticneKnjigeVencanihNotarComponent implements OnInit {
   
   pretraziPoJmbg(): void {
     if (this.jmbgZene) {
-      const filtriraniKorisnici = this.originalniKorisnici.filter(korisnik => korisnik.jmbgZene.includes(this.jmbgZene));
+      const filtriraniKorisnici = this.korisnici.filter(korisnik => korisnik.jmbgZene.includes(this.jmbgZene));
       if (filtriraniKorisnici.length > 0) {
         this.korisnici = filtriraniKorisnici;
       } else {

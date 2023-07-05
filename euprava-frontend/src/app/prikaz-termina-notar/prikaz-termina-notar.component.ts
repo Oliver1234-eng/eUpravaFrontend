@@ -14,7 +14,7 @@ export class PrikazTerminaNotarComponent implements OnInit {
   constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
-    this.http.get<any>('http://localhost:8080/api/termin/all/').subscribe(
+    this.http.get<any>('http://localhost:8083/api/termin/all/').subscribe(
       data => {
         this.termini = data;
       },

@@ -16,7 +16,7 @@ export class DodavanjeUgovoraNotarComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.http.get<any>('http://localhost:8080/api/termin/zakazaniTermini/').subscribe(
+    this.http.get<any>('http://localhost:8083/api/termin/zakazaniTermini/').subscribe(
       data => {
         this.termini = data;
         console.log(data)
@@ -55,7 +55,7 @@ export class DodavanjeUgovoraNotarComponent implements OnInit {
     };
 
 
-    this.http.post('http://localhost:8080/api/ugovor/add/', requestBody)
+    this.http.post('http://localhost:8083/api/ugovor/add/', requestBody)
       .subscribe(
         response => {
           console.log('Ugovor je uspešno dodat', response);

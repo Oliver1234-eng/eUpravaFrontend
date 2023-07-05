@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MaticnaKnjigaUmrlih } from '../pregled-maticne-knjige-umrlih/MaticnaKnjigaUmrlih';
 import { Router } from '@angular/router';
+import { MaticarService } from '../maticar.service';
 
 @Component({
   selector: 'app-prikaz-maticne-knjige-umrlih-notar',
@@ -10,22 +11,15 @@ import { Router } from '@angular/router';
 export class PrikazMaticneKnjigeUmrlihNotarComponent implements OnInit {
 
   jmbg: string = '';
-
-  originalniKorisnici: MaticnaKnjigaUmrlih[] = [
-    new MaticnaKnjigaUmrlih('0101010101010', 'Mihajlo', 'Mitrovic', '01.03.2023. 10:00'),
-    new MaticnaKnjigaUmrlih('0202020202020', 'Bojan', 'Bojanic', '01.04.2023. 11:00'),
-    new MaticnaKnjigaUmrlih('0303030303030', 'Vojkan', 'Simonovic', '01.05.2023. 12:00')
-  ];
+  korisnici: MaticnaKnjigaUmrlih[];
 
   title = 'Prikaz matične knjige umrlih';
 
-  korisnici: MaticnaKnjigaUmrlih[] = [
-    new MaticnaKnjigaUmrlih('0101010101010', 'Mihajlo', 'Mitrovic', '01.03.2023. 10:00'),
-    new MaticnaKnjigaUmrlih('0202020202020', 'Bojan', 'Bojanic', '01.04.2023. 11:00'),
-    new MaticnaKnjigaUmrlih('0303030303030', 'Vojkan', 'Simonovic', '01.05.2023. 12:00')
-  ];
-
-  constructor(private router: Router) { }
+  constructor(private router: Router, private maticarService: MaticarService) { 
+    this.maticarService.getAllKnjigeUmrlih().subscribe(korisnik => {
+      this.korisnici = korisnik;
+    })
+  }
 
   ngOnInit(): void {
     this.korisnici = [];
@@ -33,7 +27,7 @@ export class PrikazMaticneKnjigeUmrlihNotarComponent implements OnInit {
 
   pretrazi(): void {
     if (this.jmbg) {
-      const filtriraniKorisnici = this.originalniKorisnici.filter(korisnik => korisnik.jmbg.includes(this.jmbg));
+      const filtriraniKorisnici = this.korisnici.filter(korisnik => korisnik.jmbg.includes(this.jmbg));
       if (filtriraniKorisnici.length > 0) {
         this.korisnici = filtriraniKorisnici;
       } else {

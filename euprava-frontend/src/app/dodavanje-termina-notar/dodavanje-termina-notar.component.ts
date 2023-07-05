@@ -50,7 +50,7 @@ kancelarije: any[] = [];
   constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
-    this.http.get<any>('http://localhost:8080/api/kancelarija/all/').subscribe(
+    this.http.get<any>('http://localhost:8083/api/kancelarija/all/').subscribe(
       data => {
         this.kancelarije = data;
         console.log(data)
@@ -73,7 +73,7 @@ kancelarije: any[] = [];
 
     console.log(requestBody);
 
-    this.http.post<any>('http://localhost:8080/api/termin/add/', requestBody)
+    this.http.post<any>('http://localhost:8083/api/termin/add/', requestBody)
       .subscribe(
         (response) => {
           console.log(response);

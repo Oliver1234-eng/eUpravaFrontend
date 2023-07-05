@@ -20,7 +20,7 @@ termini: any[] = [];
   constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
-    this.http.get<any>('http://localhost:8080/api/termin/slobodniTermini/').subscribe(
+    this.http.get<any>('http://localhost:8083/api/termin/slobodniTermini/').subscribe(
       data => {
         this.termini = data;
       },
@@ -37,7 +37,7 @@ termini: any[] = [];
       vrstaUgovora: this.azuriranjeTermina.vrstaUgovora,
     };
   
-    this.http.post('http://localhost:8080/api/termin/notar/zakazi/', requestBody)
+    this.http.post('http://localhost:8083/api/termin/notar/zakazi/', requestBody)
       .subscribe(
         (response) => {
           console.log(response);

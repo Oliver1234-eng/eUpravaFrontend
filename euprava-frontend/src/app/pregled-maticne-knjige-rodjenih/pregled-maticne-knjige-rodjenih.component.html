@@ -11,6 +11,9 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/maticar-profile">Pregled profila</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/add-maticna-knjiga-rodjenih">Dodaj Matičnu knjigu rođenih</a>
+      </li>
         <li class="nav-item">
             <a class="nav-link" routerLink="/login">Odjava</a>
         </li>
@@ -18,7 +21,7 @@
     </div>
 </nav>
 <div class="container-fluid">
-  <h1>{{title}}</h1>
+  <h1>Pregled Maticne Knjige Rodjenih</h1>
   <div class="form-group row">
     <label for="jmbgInput" class="col-sm-2 col-form-label">JMBG:</label>
     <div class="col-sm-4">
@@ -59,6 +62,12 @@
     <div class="col-sm-4" *ngFor="let korisnik of korisnici">
       <div class="card mb-3">
         <div class="card-header">{{korisnik.ime}} {{korisnik.prezime}}</div>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="edit(korisnik)">
+          Edit
+        </button>
+        <button type="button" class="btn btn-danger" (click)="deleteKorisnik(korisnik)">
+          Delete
+        </button>
         <div class="card-body">
           <p class="card-text"><strong>JMBG:</strong> {{korisnik.jmbg}}</p>
           <p class="card-text"><strong>Adresa rođenja:</strong> {{korisnik.adresaRodjenja}}, {{korisnik.mestoIOpstinaRodjenja}}, {{korisnik.drzavaRodjenja}}</p>
@@ -83,4 +92,106 @@
     <button type="button" class="btn btn-danger" (click)="downloadKorisnik2PDF()">Preuzmi izveštaj za korisnika2 (PDF) <i class="fa fa-download"></i></button>
     <br><br>
     <button type="button" class="btn btn-danger" (click)="downloadKorisnik3PDF()">Preuzmi izveštaj za korisnika3 (PDF) <i class="fa fa-download"></i></button> -->
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Update Post</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <form #updateForm="ngForm" (ngSubmit)="updatePost()">
+          <div class="form-group">
+            <label for="name">JMBG :</label>
+            <input type="text" #title [(ngModel)]="postToUpdate.jmbg" name="jmbg" id="jmbg" class="form-control"
+              placeholder="Jmbg">
+          </div>
+          <div class="form-group">
+            <label for="ime">Ime:</label>
+            <input type="text" [(ngModel)]="postToUpdate.ime" name="ime" id="ime" class="form-control" placeholder="Ime">
+          </div>
+          
+          <div class="form-group">
+            <label for="prezime">Prezime:</label>
+            <input type="text" [(ngModel)]="postToUpdate.prezime" name="prezime" id="prezime" class="form-control" placeholder="Prezime">
+          </div>
+          
+          <div class="form-group">
+            <label for="adresaRodjenja">Adresa rođenja:</label>
+            <input type="text" [(ngModel)]="postToUpdate.adresaRodjenja" name="adresaRodjenja" id="adresaRodjenja" class="form-control" placeholder="Adresa rođenja">
+          </div>
+          
+          <div class="form-group">
+            <label for="imeOca">Ime oca:</label>
+            <input type="text" [(ngModel)]="postToUpdate.imeOca" name="imeOca" id="imeOca" class="form-control" placeholder="Ime oca">
+          </div>
+          
+          <div class="form-group">
+            <label for="prezimeOca">Prezime oca:</label>
+            <input type="text" [(ngModel)]="postToUpdate.prezimeOca" name="prezimeOca" id="prezimeOca" class="form-control" placeholder="Prezime oca">
+          </div>
+          
+          <div class="form-group">
+            <label for="zanimanjeOca">Zanimanje oca:</label>
+            <input type="text" [(ngModel)]="postToUpdate.zanimanjeOca" name="zanimanjeOca" id="zanimanjeOca" class="form-control" placeholder="Zanimanje oca">
+          </div>
+          
+          <div class="form-group">
+            <label for="imeMajke">Ime majke:</label>
+            <input type="text" [(ngModel)]="postToUpdate.imeMajke" name="imeMajke" id="imeMajke" class="form-control" placeholder="Ime majke">
+          </div>
+          
+          <div class="form-group">
+            <label for="prezimeMajke">Prezime majke:</label>
+            <input type="text" [(ngModel)]="postToUpdate.prezimeMajke" name="prezimeMajke" id="prezimeMajke" class="form-control" placeholder="Prezime majke">
+          </div>
+          
+          <div class="form-group">
+            <label for="zanimanjeMajke">Zanimanje majke:</label>
+            <input type="text" [(ngModel)]="postToUpdate.zanimanjeMajke" name="zanimanjeMajke" id="zanimanjeMajke" class="form-control" placeholder="Zanimanje majke">
+          </div>
+          
+          <div class="form-group">
+            <label for="drzavljanstvo">Državljanstvo:</label>
+            <input type="text" [(ngModel)]="postToUpdate.drzavljanstvo" name="drzavljanstvo" id="drzavljanstvo" class="form-control" placeholder="Državljanstvo">
+          </div>
+         
+          <div class="form-group">
+            <label for="mestoIOpstinaRodjenja">Mesto i opština rođenja:</label>
+            <input type="text" [(ngModel)]="postToUpdate.mestoIOpstinaRodjenja" name="mestoIOpstinaRodjenja" id="mestoIOpstinaRodjenja" class="form-control" placeholder="Mesto i opština rođenja">
+          </div>
+          
+          <div class="form-group">
+            <label for="drzavaRodjenja">Država rođenja:</label>
+            <input type="text" [(ngModel)]="postToUpdate.drzavaRodjenja" name="drzavaRodjenja" id="drzavaRodjenja" class="form-control" placeholder="Država rođenja">
+          </div>
+          
+          <div class="form-group">
+            <label for="danMesecGodinaIVremeRodjenja">Datum i vreme rođenja:</label>
+            <input type="text" [(ngModel)]="postToUpdate.danMesecGodinaIVremeRodjenja" name="danMesecGodinaIVremeRodjenja" id="danMesecGodinaIVremeRodjenja" class="form-control" placeholder="Datum i vreme rođenja">
+          </div>
+          
+          <div class="form-group">
+            <label for="roditelji">Roditelji:</label>
+            <input type="text" [(ngModel)]="postToUpdate.roditelji" name="roditelji" id="roditelji" class="form-control" placeholder="Roditelji">
+          </div>
+          
+          <div class="form-group">
+            <label for="deca">Deca:</label>
+            <input type="text" [(ngModel)]="postToUpdate.deca" name="deca" id="deca" class="form-control" placeholder="Deca">
+          </div>
+          <div>
+            <input type="submit" value="Update" class="btn btn-primary w-100">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>

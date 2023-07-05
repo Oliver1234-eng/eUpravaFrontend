@@ -8,9 +8,9 @@ import { Observable } from 'rxjs';
 
 export class IstorijePromenaService {
 
-  private apiURL = 'http://localhost:8080/api/katastar/istorijePromena';
-  private apiURL2 = 'http://localhost:8080/api/katastar/porukeKatastru';
-  private apiURL3 = 'http://localhost:8080/api/katastar/porukeNotaru';
+  private apiURL = 'http://localhost:8081/api/katastar/istorijePromena';
+  private apiURL2 = 'http://localhost:8081/api/katastar/porukeKatastru';
+  private apiURL3 = 'http://localhost:8081/api/katastar/porukeNotaru';
 
   constructor(private http: HttpClient) { }
 
@@ -27,6 +27,6 @@ export class IstorijePromenaService {
   }
 
   dodajIstorijuPromena(istorijaPromena: any): Observable<any> {
-    return this.http.post('http://localhost:8080/api/katastar/istorijePromena', istorijaPromena);
+    return this.http.post('http://localhost:8081/api/katastar/istorijePromena', istorijaPromena);
   }
 }

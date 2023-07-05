@@ -23,7 +23,7 @@ export class AzuriranjePodatakaONepokretnostiComponent implements OnInit {
       noviVlasnik: this.azuriranjeNepokretnosti.noviVlasnik
     };
   
-    this.http.put('http://localhost:8080/api/katastar/nepokretnosti/izmena', requestBody)
+    this.http.put('http://localhost:8081/api/katastar/nepokretnosti/izmena', requestBody)
       .subscribe(
         (response) => {
           console.log(response);
