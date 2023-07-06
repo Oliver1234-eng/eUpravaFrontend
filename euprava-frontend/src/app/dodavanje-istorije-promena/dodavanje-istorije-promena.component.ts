@@ -15,7 +15,7 @@ export class DodavanjeIstorijePromenaComponent implements OnInit {
 
   ngOnInit(): void {
     this.istorijaPromena.katastar = 'katastar';
-    this.istorijaPromena.datumPromene = '02.06.2023';
+    this.istorijaPromena.datumPromene = '29.06.2023';
   }
 
   dodajIstorijuPromena() {
