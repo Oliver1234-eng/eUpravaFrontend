@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <a class="navbar-brand ml-auto" href="/gradjanin-home">eGrađanin</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/gradjanin-home">Početna</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/gradjanin-profile">Pregled profila</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/login">Odjava</a>
+        </li>
+      </ul>
+    </div>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Lista termina</h1>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Datum i vreme</th>
+            <th>Ime i prezime notara</th>
+            <th>Kancelarija</th>
+            <th>Vrsta ugovora</th>
+            <th>Status termina</th>
+            <th>JMBG građanina</th>
+            <th>Ime i prezime građanina</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let termin of termini">
+            <td>{{ termin.id }}</td>
+            <td>{{ termin.datumIvremeSastanka }}</td>
+            <td>{{termin.notar.ime}}<br>{{termin.notar.prezime}}</td>
+            <td>{{termin.kancelarija.id}}</td>
+            <td>{{termin.vrstaUgovora}}</td>
+            <td>{{ termin.statusTermina }}</td>
+            <td>{{ termin.stranka?.jmbg}}</td>
+            <td>{{termin.stranka?.ime}}<br>{{termin.stranka?.prezime}}</td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <button class="btn btn-primary" (click)="rezervisiTermin()">Rezerviši termin</button>
+</div>

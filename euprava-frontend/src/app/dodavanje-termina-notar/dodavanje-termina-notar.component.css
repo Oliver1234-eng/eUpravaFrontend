@@ -1,0 +1,30 @@
+.navbar {
+    background-color: #0066cc;; /* tamnija plava */
+}
+  
+.navbar-light .navbar-nav .nav-link {
+    color: #ffffff; /* bela boja teksta */
+}
+  
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #f7f7f7; /* svetlija boja teksta prilikom hover-a */
+}
+  
+.navbar-light .navbar-brand {
+    color: #ffffff; /* bela boja teksta za brending */
+}
+  
+.navbar-light .navbar-brand:hover {
+    color: #f7f7f7; /* svetlija boja teksta prilikom hover-a */
+}
+
+h1 {
+    color: #0066cc;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.btn-primary {
+    width: 100%;
+    margin-top: 10px;
+}

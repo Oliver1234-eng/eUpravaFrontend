@@ -118,6 +118,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     MatInputModule,
     BrowserAnimationsModule,
     RouterModule.forChild([{ path: 'login', component: LoginComponent }]),
+    BrowserAnimationsModule,
 
     // ToastrModule.forRoot({
     //   positionClass :'toast-bottom-right'

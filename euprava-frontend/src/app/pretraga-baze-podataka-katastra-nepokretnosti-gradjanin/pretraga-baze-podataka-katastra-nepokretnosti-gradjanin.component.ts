@@ -64,11 +64,17 @@ export class PretragaBazePodatakaKatastraNepokretnostiGradjaninComponent impleme
         const nacinKoriscenjaObjektaB = b.nacinKoriscenjaObjekta.toLowerCase();
         return sortOrder === 'asc' ? nacinKoriscenjaObjektaA.localeCompare(nacinKoriscenjaObjektaB, undefined, { sensitivity: 'base' }) : nacinKoriscenjaObjektaB.localeCompare(nacinKoriscenjaObjektaA, undefined, { sensitivity: 'base' });
       });
-    } else if (sortField === 'gradjanin') {
+    } else if (sortField === 'stariVlasnik') {
       this.nepokretnosti.sort((a, b) => {
-        const gradjaninA = a.gradjanin.ime.toLowerCase();
-        const gradjaninB = b.gradjanin.ime.toLowerCase();
-        return sortOrder === 'asc' ? gradjaninA.localeCompare(gradjaninB, undefined, { sensitivity: 'base' }) : gradjaninB.localeCompare(gradjaninA, undefined, { sensitivity: 'base' });
+        const stariVlasnikA = a.stariVlasnik.toLowerCase();
+        const stariVlasnikB = b.stariVlasnik.toLowerCase();
+        return sortOrder === 'asc' ? stariVlasnikA.localeCompare(stariVlasnikB, undefined, { sensitivity: 'base' }) : stariVlasnikB.localeCompare(stariVlasnikA, undefined, { sensitivity: 'base' });
+      });
+    } else if (sortField === 'noviVlasnik') {
+      this.nepokretnosti.sort((a, b) => {
+        const noviVlasnikA = a.noviVlasnik.toLowerCase();
+        const noviVlasnikB = b.noviVlasnik.toLowerCase();
+        return sortOrder === 'asc' ? noviVlasnikA.localeCompare(noviVlasnikB, undefined, { sensitivity: 'base' }) : noviVlasnikB.localeCompare(noviVlasnikA, undefined, { sensitivity: 'base' });
       });
     }
   }

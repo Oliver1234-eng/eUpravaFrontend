@@ -42,6 +42,30 @@ import { MaticarProfileComponent } from './maticar-profile/maticar-profile.compo
 import { PregledMaticneKnjigeRodjenihComponent } from './pregled-maticne-knjige-rodjenih/pregled-maticne-knjige-rodjenih.component';
 import { GradjaninNotarZakazivanjeComponent } from './gradjanin-notar-zakazivanje/gradjanin-notar-zakazivanje.component';
 
+import { DodavanjeNoveNepokretnostiComponent } from './dodavanje-nove-nepokretnosti/dodavanje-nove-nepokretnosti.component';
+import { DodavanjeIstorijePromenaComponent } from './dodavanje-istorije-promena/dodavanje-istorije-promena.component';
+import { AzuriranjePodatakaONepokretnostiComponent } from './azuriranje-podataka-o-nepokretnosti/azuriranje-podataka-o-nepokretnosti.component';
+import { PregledMaticneKnjigeVencanihComponent } from './pregled-maticne-knjige-vencanih/pregled-maticne-knjige-vencanih.component';
+import { PregledMaticneKnjigeUmrlihComponent } from './pregled-maticne-knjige-umrlih/pregled-maticne-knjige-umrlih.component';
+import { PrikazTerminaGradjaninComponent } from './prikaz-termina-gradjanin/prikaz-termina-gradjanin.component';
+import { RezervacijaTerminaGradjaninComponent } from './rezervacija-termina-gradjanin/rezervacija-termina-gradjanin.component';
+import { DodavanjeUgovoraNotarComponent } from './dodavanje-ugovora-notar/dodavanje-ugovora-notar.component';
+import { PretragaBazePodatakaKatastraNepokretnostiNotarComponent } from './pretraga-baze-podataka-katastra-nepokretnosti-notar/pretraga-baze-podataka-katastra-nepokretnosti-notar.component';
+import { PrikazMaticneKnjigeRodjenihNotarComponent } from './prikaz-maticne-knjige-rodjenih-notar/prikaz-maticne-knjige-rodjenih-notar.component';
+import { PrikazMaticneKnjigeVencanihNotarComponent } from './prikaz-maticne-knjige-vencanih-notar/prikaz-maticne-knjige-vencanih-notar.component';
+import { PrikazMaticneKnjigeUmrlihNotarComponent } from './prikaz-maticne-knjige-umrlih-notar/prikaz-maticne-knjige-umrlih-notar.component';
+import { ProveraGradjaninaNotarComponent } from './provera-gradjanina-notar/provera-gradjanina-notar.component';
+import { PotvrdjivanjeUgovoraNotarComponent } from './potvrdjivanje-ugovora-notar/potvrdjivanje-ugovora-notar.component';
+import { SlanjePodatakaUKatastarComponent } from './slanje-podataka-u-katastar/slanje-podataka-u-katastar.component';
+import { PorukaKatastruComponent } from './poruka-katastru/poruka-katastru.component';
+import { PorukaNotaruComponent } from './poruka-notaru/poruka-notaru.component';
+import { DodavanjePorukeKatastruComponent } from './dodavanje-poruke-katastru/dodavanje-poruke-katastru.component';
+import { DodavanjePorukeNotaruComponent } from './dodavanje-poruke-notaru/dodavanje-poruke-notaru.component';
+import { DodavanjeTerminaNotarComponent } from './dodavanje-termina-notar/dodavanje-termina-notar.component';
+import { AddMaticnaKnjigaRodjenihComponent } from './add-maticna-knjiga-rodjenih/add-maticna-knjiga-rodjenih.component';
+import { AddMaticnaKnjigaVencanihComponent } from './add-maticna-knjiga-vencanih/add-maticna-knjiga-vencanih.component';
+import { AddMaticnaKnjigaUmrlihComponent } from './add-maticna-knjiga-umrlih/add-maticna-knjiga-umrlih.component';
+
 
 const routes: Routes = [
   {path: '', component: FirstPageComponent},
@@ -85,6 +109,30 @@ const routes: Routes = [
   {path: 'pregled-maticne-knjige-rodjenih', component: PregledMaticneKnjigeRodjenihComponent},
   {path: 'gradjanin-notar-zakazivanje', component: GradjaninNotarZakazivanjeComponent},
 
+
+  {path: 'dodavanje-nove-nepokretnosti', component: DodavanjeNoveNepokretnostiComponent},
+  {path: 'dodavanje-istorije-promena', component: DodavanjeIstorijePromenaComponent},
+  {path: 'azuriranje-podataka-o-nepokretnosti', component: AzuriranjePodatakaONepokretnostiComponent},
+  {path: 'add-maticna-knjiga-rodjenih', component: AddMaticnaKnjigaRodjenihComponent},
+  {path: 'add-maticna-knjiga-vencanih', component: AddMaticnaKnjigaVencanihComponent},
+  {path: 'add-maticna-knjiga-umrlih', component: AddMaticnaKnjigaUmrlihComponent},
+  {path: 'pregled-maticne-knjige-vencanih', component: PregledMaticneKnjigeVencanihComponent},
+  {path: 'pregled-maticne-knjige-umrlih', component: PregledMaticneKnjigeUmrlihComponent},
+  {path: 'prikaz-termina-gradjanin', component: PrikazTerminaGradjaninComponent},
+  {path: 'rezervacija-termina-gradjanin', component: RezervacijaTerminaGradjaninComponent},
+  {path: 'dodavanje-ugovora-notar', component: DodavanjeUgovoraNotarComponent},
+  {path: 'pretraga-baze-podataka-katastra-nepokretnosti-notar', component: PretragaBazePodatakaKatastraNepokretnostiNotarComponent},
+  {path: 'prikaz-maticne-knjige-rodjenih-notar', component: PrikazMaticneKnjigeRodjenihNotarComponent},
+  {path: 'prikaz-maticne-knjige-vencanih-notar', component: PrikazMaticneKnjigeVencanihNotarComponent},
+  {path: 'prikaz-maticne-knjige-umrlih-notar', component: PrikazMaticneKnjigeUmrlihNotarComponent},
+  {path: 'provera-gradjanina-notar', component: ProveraGradjaninaNotarComponent},
+  {path: 'potvrdjivanje-ugovora-notar', component: PotvrdjivanjeUgovoraNotarComponent},
+  {path: 'slanje-podataka-u-katastar', component: SlanjePodatakaUKatastarComponent},
+  {path: 'poruka-katastru', component: PorukaKatastruComponent},
+  {path: 'poruka-notaru', component: PorukaNotaruComponent},
+  {path: 'dodavanje-poruke-katastru', component: DodavanjePorukeKatastruComponent},
+  {path: 'dodavanje-poruke-notaru', component: DodavanjePorukeNotaruComponent},
+  {path: 'dodavanje-termina-notar', component: DodavanjeTerminaNotarComponent},
   {path: '404', component: NotFoundComponent},
   {path: '**', redirectTo: '404'},
 ];

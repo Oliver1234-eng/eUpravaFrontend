@@ -1,0 +1,92 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <a class="navbar-brand ml-auto" href="/katastar-home">Aplikacija za katastar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/katastar-home">Početna</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/katastar-profile">Pregled profila</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/login">Odjava</a>
+        </li>
+      </ul>
+    </div>
+</nav>
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">Dodavanje nove nepokretnosti</h2>
+          </div>
+          <div class="card-body">
+            <form (ngSubmit)="dodajNepokretnost()" #nepokretnostForm="ngForm">
+              <div class="form-group">
+                <label for="adresa">Adresa:</label>
+                <input type="text" id="adresa" name="adresa" [(ngModel)]="nepokretnost.adresa" required class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="brojParcele">Broj parcele:</label>
+                <input type="text" id="brojParcele" name="brojParcele" [(ngModel)]="nepokretnost.brojParcele" required class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="brojDelaParcele">Broj dela parcele:</label>
+                <input type="number" id="brojDelaParcele" name="brojDelaParcele" [(ngModel)]="nepokretnost.brojDelaParcele" required class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="povrsina">Površina:</label>
+                <input type="number" id="povrsina" name="povrsina" [(ngModel)]="nepokretnost.povrsina" required class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="potes">Potes:</label>
+                <input type="text" id="potes" name="potes" [(ngModel)]="nepokretnost.potes" required class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="nacinKoriscenjaZemljista">Način korišćenja zemljišta:</label>
+                <select id="nacinKoriscenjaZemljista" name="nacinKoriscenjaZemljista" [(ngModel)]="nepokretnost.nacinKoriscenjaZemljista" required class="form-control">
+                  <option value="ZEMLJISTE_POD_ZGRADOM">Zemljište pod zgradom</option>
+                  <option value="ZEMLJISTE_UZ_OGRADU">Zemljište uz ogradu</option>
+                  <option value="ZAMLJISTE_UZ_PUT">Zemljište uz put</option>
+                  <option value="ZEMLJISTE_UZ_REKU">Zemljište uz reku</option>
+                  <option value="NJIVA">Njiva</option>
+                  <option value="SUMA">Šuma</option>
+                  <option value="PASNJAK">Pašnjak</option>
+                  <option value="VOCNJAK">Voćnjak</option>
+                  <option value="GRADJEVINSKO_ZEMLJISTE">Građevinsko zemljište</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="nacinKoriscenjaObjekta">Način korišćenja objekta:</label>
+                <select id="nacinKoriscenjaObjekta" name="nacinKoriscenjaObjekta" [(ngModel)]="nepokretnost.nacinKoriscenjaObjekta" required class="form-control">
+                  <option value="GRADJEVINSKO_ZEMLJISTE">Građevinsko zemljište</option>
+                  <option value="POLJOPRIVREDNO_ZEMLJISTE">Poljoprivredno zemljište</option>
+                  <option value="SUMSKO_ZEMLJISTE">Šumsko zemljište</option>
+                  <option value="VODNO_ZEMLJISTE">Vodno zemljište</option>
+                  <option value="RUDNICKO_ZEMLJISTE">Rudničko zemljište</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="katastar">Katastarski radnik koji unosi nepokretnost:</label>
+                <input type="text" id="katastar" name="katastar" [(ngModel)]="nepokretnost.katastar" required class="form-control" readonly>
+              </div>
+              <div class="form-group">
+                <label for="stariVlasnik">Stari vlasnik:</label>
+                <input type="text" id="stariVlasnik" name="stariVlasnik" [(ngModel)]="nepokretnost.stariVlasnik" required class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="noviVlasnik">Novi vlasnik:</label>
+                <input type="text" id="noviVlasnik" name="noviVlasnik" [(ngModel)]="nepokretnost.noviVlasnik" required class="form-control">
+              </div>
+              
+              <button type="submit" class="btn btn-primary">Dodaj nepokretnost</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
