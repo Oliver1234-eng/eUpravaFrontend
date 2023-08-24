@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { Termin } from './Termin';
 
 @Component({
   selector: 'app-prikaz-termina-notar',
@@ -9,29 +8,60 @@ import { Router } from '@angular/router';
 })
 export class PrikazTerminaNotarComponent implements OnInit {
 
-  termini: any[] = [];
+  sortField: string = '';
+  sortOrder: 'asc' | 'desc' = 'asc';
 
-  constructor(private http: HttpClient, private router: Router) { }
+  previousSortField: string;
+  previousSortOrder: 'asc' | 'desc';
+
+  terminiPrikaz: any[];
+
+  title = 'Spisak termina';
+
+  termini: Termin[] = [
+    new Termin(1, '02.05.2023. 13:00', '30 min', 'OVERA_POTPISA', 'ZAVRSEN', 'da'),
+    new Termin(1, '03.05.2023. 14:00', '1 h', 'OVERA', 'ZAVRSEN', 'da'),
+    new Termin(1, '04.05.2023. 15:00', '45 min', 'UGOVOR_O_NEPOKRETNOSTI', 'ZAVRSEN', 'ne'),
+  ];
+
+  constructor() { }
 
   ngOnInit(): void {
-    this.http.get<any>('http://localhost:8083/api/termin/all/').subscribe(
-      data => {
-        this.termini = data;
-      },
-      error => {
-        console.error(error);
-      }
-    );
+    this.prikaziSveUgovore();
   }
 
-  dodajNoviUgovor() {
-    const url = 'http://localhost:4200/dodavanje-ugovora-notar';
-    window.open(url, '_blank');
+  prikaziSveUgovore() {
+    this.terminiPrikaz = this.termini;
   }
 
-  dodajNoviTermin() {
-    const url = 'http://localhost:4200/dodavanje-termina-notar';
-    window.open(url, '_blank');
+  downloadTermin1PDF() {
+    const link = document.createElement('a');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', 'https://drive.google.com/file/d/1OYT6x-Wd7ydRDJt-YHVHxxGPHtB3iJHL/view?usp=sharing');
+    link.setAttribute('download', 'izvestaj.pdf');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
+  downloadTermin2PDF() {
+    const link = document.createElement('a');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', 'https://drive.google.com/file/d/1awg4sqN94kYlydzYD7plaphE6ZwA4BZL/view?usp=sharing');
+    link.setAttribute('download', 'izvestaj.pdf');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
+  downloadTermin3PDF() {
+    const link = document.createElement('a');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', 'https://drive.google.com/file/d/1zkDo5GEjFrJhXGPZjo8RrbMb1zWE-D0D/view?usp=sharing');
+    link.setAttribute('download', 'izvestaj.pdf');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   }
 
 }

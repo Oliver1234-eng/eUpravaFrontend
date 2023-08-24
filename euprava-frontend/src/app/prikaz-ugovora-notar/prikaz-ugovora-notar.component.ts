@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { Ugovor } from './Ugovor';
 
 @Component({
   selector: 'app-prikaz-ugovora-notar',
@@ -9,36 +8,59 @@ import { Router } from '@angular/router';
 })
 export class PrikazUgovoraNotarComponent implements OnInit {
 
-  ugovori: any[] = [];
+  sortField: string = '';
+  sortOrder: 'asc' | 'desc' = 'asc';
 
-  constructor(private http: HttpClient, private router: Router) { }
+  previousSortField: string;
+  previousSortOrder: 'asc' | 'desc';
+
+  ugovoriPrikaz: any[];
+
+  title = 'Spisak ugovora';
+
+  ugovori: Ugovor[] = [
+    new Ugovor(1, '1234567890123', 'Jelena', 'Jovanović', 'Ženski', '01.01.1990.', 'notar', 'OVERA_POTPISA', '01.05.2023', 'da'),
+    new Ugovor(1, '1234567890123', 'Jelena', 'Jovanović', 'Ženski', '01.01.1990.', 'notar', 'OVERA', '02.05.2023', 'ne'),
+    new Ugovor(1, '1234567890123', 'Jelena', 'Jovanović', 'Ženski', '01.01.1990.', 'notar', 'UGOVOR_O_NEPOKRETNOSTI', '03.05.2023', 'ne'),
+  ];
+
+  constructor() { }
 
   ngOnInit(): void {
-    this.http.get<any>('http://localhost:8083/api/ugovor/all/').subscribe(
-      data => {
-        this.ugovori = data;
-        console.log(data)
-      },
-      error => {
-        console.error(error); 
-      }
-    );
+    this.prikaziSveUgovore();
   }
 
-  dodajNoviUgovor() {
-    this.router.navigate(['/dodavanje-ugovora-notar']);
+  prikaziSveUgovore() {
+    this.ugovoriPrikaz = this.ugovori;
   }
 
-  proveraNepokretnosti() {
-    this.router.navigate(['/pretraga-baze-podataka-katastra-nepokretnosti-notar']);
+  downloadUgovor1PDF() {
+    const link = document.createElement('a');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', 'https://drive.google.com/file/d/1FiJtAmxQSJWVcPPqzHGht20fWJxJak-y/view?usp=sharing');
+    link.setAttribute('download', 'izvestaj.pdf');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   }
 
-  proveraGradjanina() {
-    this.router.navigate(['/provera-gradjanina-notar']);
+  downloadUgovor2PDF() {
+    const link = document.createElement('a');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', 'https://drive.google.com/file/d/1CSLmx8Zv74873lzMmrIZYOQFQ_46fsu2?usp=sharing');
+    link.setAttribute('download', 'izvestaj.pdf');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   }
 
-  potvrdiUgovor() {
-    const url = 'http://localhost:4200/potvrdjivanje-ugovora-notar';
-    window.open(url, '_blank');
+  downloadUgovor3PDF() {
+    const link = document.createElement('a');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', 'https://drive.google.com/file/d/11Y7nMfOnVm9v9fslXLRez4JEGe1tTTrj/view?usp=sharing');
+    link.setAttribute('download', 'izvestaj.pdf');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   }
 }

@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MaticnaKnjigaRodjenih } from './MaticnaKnjigaRodjenih';
-import { Router } from '@angular/router';
-import { MaticarService } from '../maticar.service';
 
 @Component({
   selector: 'app-pregled-maticne-knjige-rodjenih',
@@ -15,116 +13,98 @@ export class PregledMaticneKnjigeRodjenihComponent implements OnInit {
   adresaFilter: string = '';
   imeFilter: string = '';
   prezimeFilter: string = '';
-  korisnici: MaticnaKnjigaRodjenih[];
+
+  originalniKorisnici: MaticnaKnjigaRodjenih[] = [
+    new MaticnaKnjigaRodjenih('1001956630001', 'Ana', 'Popović', 'Kralja Petra I 23', 'Marko', 'Popović', 'inženjer', 'Jelena', 'Popović', 'profesor', 'srpsko', '1301956630002', '1401956630003', 'Beograd, Stari Grad', 'Srbija', '10.01.1995. 12:30', '0', '2'),
+    new MaticnaKnjigaRodjenih('1502957780001', 'Ivan', 'Petrović', 'Bulevar Kralja Aleksandra 87', 'Petar', 'Petrović', 'advokat', 'Jelena', 'Petrović', 'lekar', 'srpsko', '2302957780002', '2402957780003', 'Beograd, Vračar', 'Srbija', '15.02.1995. 15:10', '1', '2'),
+    new MaticnaKnjigaRodjenih('1304960120001', 'Jovana', 'Nikolić', 'Trg republike 5', 'Nikola', 'Nikolić', 'profesor', 'Milica', 'Nikolić', 'nastavnica', 'srpsko', '2204960120002', '2304960120003', 'Beograd, Stari Grad', 'Srbija', '13.04.1996. 08:45', '2', '2')
+  ];
 
   title = 'Prikaz matične knjige rođenih';
 
-  postToUpdate = {
-    jmbg: "",
-      ime: "",
-      prezime: "",
-      adresaRodjenja: "",
-      imeOca: "",
-      prezimeOca: "",
-      zanimanjeOca: "",
-      imeMajke: "",
-      prezimeMajke: "",
-      zanimanjeMajke: "",
-      drzavljanstvo: "",
-      jmbgOca: "",
-      jmbgMajke: "",
-      mestoIOpstinaRodjenja: "",
-      drzavaRodjenja: "",
-      danMesecGodinaIVremeRodjenja: "",
-      roditelji: "",
-      deca: ""
-  }
+  korisnici: MaticnaKnjigaRodjenih[] = [
+    new MaticnaKnjigaRodjenih('1001956630001', 'Ana', 'Popović', 'Kralja Petra I 23', 'Marko', 'Popović', 'inženjer', 'Jelena', 'Popović', 'profesor', 'srpsko', '1301956630002', '1401956630003', 'Beograd, Stari Grad', 'Srbija', '10.01.1995. 12:30', '0', '2'),
+    new MaticnaKnjigaRodjenih('1502957780001', 'Ivan', 'Petrović', 'Bulevar Kralja Aleksandra 87', 'Petar', 'Petrović', 'advokat', 'Jelena', 'Petrović', 'lekar', 'srpsko', '2302957780002', '2402957780003', 'Beograd, Vračar', 'Srbija', '15.02.1995. 15:10', '1', '2'),
+    new MaticnaKnjigaRodjenih('1304960120001', 'Jovana', 'Nikolić', 'Trg republike 5', 'Nikola', 'Nikolić', 'profesor', 'Milica', 'Nikolić', 'nastavnica', 'srpsko', '2204960120002', '2304960120003', 'Beograd, Stari Grad', 'Srbija', '13.04.1996. 08:45', '2', '2')
+  ];
 
-  constructor(private router: Router, private maticarService: MaticarService) { 
-    this.maticarService.getAllKnjigeRodjenih().subscribe(korisnik => {
-      this.korisnici = korisnik;
-    })
-  }
-
-  edit(korisnik){
-    this.postToUpdate = korisnik;
-  }
-
-  updatePost(){
-    this.maticarService.updateKorisnik(this.postToUpdate).subscribe(
-      (resp) => {
-        console.log(resp);
-      },
-      (err) => {
-        console.log(err);
-      }
-    );
-  }
+  constructor() { }
 
   ngOnInit(): void {
-    this.korisnici = [];
   }
 
-  deleteKorisnik(korisnik){
-    this.maticarService.deleteKorisnik(korisnik.jmbg).subscribe(
-      (resp) => {
-        console.log(resp);
-      },
-      err => {
-        console.log(err);
-      }
-    );
-  }
-
-  pretrazi(): void {
+  pretrazi() {
     if (this.jmbgFilter) {
-      const filtriraniKorisnici = this.korisnici.filter(korisnik => korisnik.jmbg.includes(this.jmbgFilter));
-      if (filtriraniKorisnici.length > 0) {
-        this.korisnici = filtriraniKorisnici;
-      } else {
-        this.korisnici = [];
+      this.korisnici = this.korisnici.filter(korisnik => korisnik.jmbg.includes(this.jmbgFilter));
+      if (this.korisnici.length === 0) {
+        this.korisnici = this.originalniKorisnici;
       }
     } else {
-      this.korisnici = [];
+      this.korisnici = this.originalniKorisnici;
     }
   }
   
-  pretraziPoAdresi(): void {
+  pretraziPoAdresi() {
     if (this.adresaFilter) {
-      const filtriraniKorisnici = this.korisnici.filter(korisnik => korisnik.adresaRodjenja.includes(this.adresaFilter));
-      if (filtriraniKorisnici.length > 0) {
-        this.korisnici = filtriraniKorisnici;
-      } else {
-        this.korisnici = [];
+      this.korisnici = this.korisnici.filter(korisnik => korisnik.adresaRodjenja.includes(this.adresaFilter));
+      if (this.korisnici.length === 0) {
+        this.korisnici = this.originalniKorisnici;
       }
     } else {
-      this.korisnici = [];
+      this.korisnici = this.originalniKorisnici;
     }
   }
   
-  pretraziPoImenu(): void {
+  pretraziPoImenu() {
     if (this.imeFilter) {
-      const filtriraniKorisnici = this.korisnici.filter(korisnik => korisnik.ime.includes(this.imeFilter));
-      if (filtriraniKorisnici.length > 0) {
-        this.korisnici = filtriraniKorisnici;
-      } else {
-        this.korisnici = [];
+      this.korisnici = this.korisnici.filter(korisnik => korisnik.ime.includes(this.imeFilter));
+      if (this.korisnici.length === 0) {
+        this.korisnici = this.originalniKorisnici;
       }
     } else {
-      this.korisnici = [];
+      this.korisnici = this.originalniKorisnici;
     }
+  }  
+
+  pretraziPoPrezimenu() {
+    if (this.prezimeFilter) {
+      this.korisnici = this.korisnici.filter(korisnik => korisnik.prezime.includes(this.prezimeFilter));
+      if (this.korisnici.length === 0) {
+        this.korisnici = this.originalniKorisnici;
+      }
+    } else {
+      this.korisnici = this.originalniKorisnici;
+    }
+  }
+  
+  downloadKorisnik1PDF() {
+    const link = document.createElement('a');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', 'https://drive.google.com/file/d/1AyuFpw82n6aXk3LkmdbOns5pEDX_ronz/view?usp=sharing');
+    link.setAttribute('download', 'izvestaj.pdf');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   }
 
-  pretraziPoPrezimenu(): void {
-    if (this.prezimeFilter) {
-      const filtriraniKorisnici = this.korisnici.filter(korisnik => korisnik.prezime.includes(this.prezimeFilter));
-      if (filtriraniKorisnici.length > 0) {
-        this.korisnici = filtriraniKorisnici;
-      } else {
-        this.korisnici = [];
-      }
-    } else {
-      this.korisnici = [];
-    }
+  downloadKorisnik2PDF() {
+    const link = document.createElement('a');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', 'https://drive.google.com/file/d/10JJ20rX5u_y1stUg4Nku8fu9fVNu3RpF/view?usp=sharing');
+    link.setAttribute('download', 'izvestaj.pdf');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   }
+
+  downloadKorisnik3PDF() {
+    const link = document.createElement('a');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', 'https://drive.google.com/file/d/1GFUfbP6JAym_GqtgKCVkxHFntJZoYELk/view?usp=sharing');
+    link.setAttribute('download', 'izvestaj.pdf');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
 }

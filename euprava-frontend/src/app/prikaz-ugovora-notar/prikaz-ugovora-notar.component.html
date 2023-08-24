@@ -17,42 +17,41 @@
       </ul>
     </div>
 </nav>
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <h1>Lista ugovora</h1>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Ime i prezime notara</th>
-            <th>Vrsta ugovora</th>
-            <th>Datum overe</th>
-            <th>Broj parcele</th>
-            <th>Stari vlasnik</th>
-            <th>Novi vlasnik</th>
-            <th>Potpis</th>
-            <th>Dokument</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let ugovor of ugovori">
-            <td>{{ ugovor.id }}</td>
-            <td>{{ ugovor.notar?.ime }}<br>{{ ugovor.notar?.prezime }}</td>
-            <td>{{ ugovor.vrstaUgovora }}</td>
-            <td>{{ ugovor.datumOvereUgovora }}</td>
-            <td>{{ ugovor.brojParcele }}</td>
-            <td>{{ ugovor.stariVlasnik }}</td>
-            <td>{{ ugovor.noviVlasnik }}</td>
-            <td>{{ ugovor.potpis }}</td>
-            <td>{{ ugovor.dokument }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <button class="btn btn-primary" (click)="dodajNoviUgovor()">Overi ugovor</button><br><br>
-  <!-- <button class="btn btn-primary" (click)="potvrdiUgovor()">Overi ugovor</button> -->
-  <!-- <button class="btn btn-primary" (click)="proveraNepokretnosti()">Provera podataka o nepokretnosti</button>
-  <button class="btn btn-primary" (click)="proveraGradjanina()">Provera podataka o gradjaninu</button> -->
+<div class="container my-4">
+    <h1 class="text-center">{{ title }}</h1>
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th scope="col">ID notara</th>
+          <th scope="col">JMBG notara</th>
+          <th scope="col">Ime notara</th>
+          <th scope="col">Prezime notara</th>
+          <th scope="col">Pol notara</th>
+          <th scope="col">Datum rođenja notara</th>
+          <th scope="col">Korisničko ime notara</th>
+          <th scope="col">Vrsta ugovora</th>
+          <th scope="col">Datum overe ugovora</th>
+          <th scope="col">Da li je overen</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ugovor of ugovoriPrikaz">
+          <td>{{ ugovor.idNotara }}</td>
+          <td>{{ ugovor.jmbgNotara }}</td>
+          <td>{{ ugovor.imeNotara }}</td>
+          <td>{{ ugovor.prezimeNotara }}</td>
+          <td>{{ ugovor.polNotara }}</td>
+          <td>{{ ugovor.datumRodjenjaNotara }}</td>
+          <td>{{ ugovor.korisnickoImeNotara }}</td>
+          <td>{{ ugovor.vrstaUgovora }}</td>
+          <td>{{ ugovor.datumOvereUgovora }}</td>
+          <td>{{ ugovor.overen }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="button" class="btn btn-danger" (click)="downloadUgovor1PDF()">Preuzmi ugovor1 (PDF) <i class="fa fa-download"></i></button>
+    <br><br>
+    <button type="button" class="btn btn-danger" (click)="downloadUgovor2PDF()">Preuzmi ugovor2 (PDF) <i class="fa fa-download"></i></button>
+    <br><br>
+    <button type="button" class="btn btn-danger" (click)="downloadUgovor3PDF()">Preuzmi ugovor3 (PDF) <i class="fa fa-download"></i></button>
 </div>
