@@ -26,25 +26,27 @@
       </ul>
     </div>
 </nav>
-<h1>Notar</h1>
-<div class="row">
-  <div class="col-md-12">
-    <div class="card mb-6">
-      <div class="card-body">
-        <div class="row">
-          <div class="col-md-2">
-            <div class="img-container">
-              <img src="/assets/calendar.png" width="200px" alt="Opis slike">
-            </div>
-          </div>
-          <div class="col-md-10">
-            <h5 class="card-title"><a routerLink="/gradjanin-notar-zakazivanje">Notar - zakazi overu ugovora</a></h5>
-            <p class="card-text">Za zakazivanje sastanka za overu ugovoru o kupoprodaji prijavite se ovde.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-</div>
+<h1>Zakazivanje sastanaka</h1>
+<form #loginForm="ngForm" (ngSubmit)="onSubmit()"  [formGroup]="form">
 
-</div>
+    <mat-form-field >
+        <mat-select formControlName="notarControl" name="notarControl">
+            <mat-option *ngFor="let n of notari" [value]="n.ime">
+              {{n.ime}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
 
+
+
+    <button mat-raised-button type="submit">Potvrdi</button>
+</form>    
+<div class="col">
+    <mat-form-field>
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker" placeholder="Odaberi datum">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+</div>

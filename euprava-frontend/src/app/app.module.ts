@@ -49,9 +49,16 @@ import { PrikazUgovoraNotarComponent } from './prikaz-ugovora-notar/prikaz-ugovo
 import { PrikazTerminaNotarComponent } from './prikaz-termina-notar/prikaz-termina-notar.component';
 import { MaticarProfileComponent } from './maticar-profile/maticar-profile.component';
 import { PregledMaticneKnjigeRodjenihComponent } from './pregled-maticne-knjige-rodjenih/pregled-maticne-knjige-rodjenih.component';
+import { GradjaninNotarZakazivanjeComponent } from './gradjanin-notar-zakazivanje/gradjanin-notar-zakazivanje.component';
+import { GradjaninNotarIstorijaComponent } from './gradjanin-notar-istorija/gradjanin-notar-istorija.component';
 // import { CommonModule } from '@angular/common';
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatInputModule} from '@angular/material/input';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 @NgModule({
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [
     AppComponent,
     FirstPageComponent,
@@ -95,6 +102,8 @@ import { PregledMaticneKnjigeRodjenihComponent } from './pregled-maticne-knjige-
     PrikazTerminaNotarComponent,
     MaticarProfileComponent,
     PregledMaticneKnjigeRodjenihComponent,
+    GradjaninNotarZakazivanjeComponent,
+    GradjaninNotarIstorijaComponent,
     // FormsModule,
     // CommonModule
   ],
@@ -104,6 +113,10 @@ import { PregledMaticneKnjigeRodjenihComponent } from './pregled-maticne-knjige-
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatInputModule,
+    BrowserAnimationsModule,
     RouterModule.forChild([{ path: 'login', component: LoginComponent }]),
 
     // ToastrModule.forRoot({
@@ -113,4 +126,5 @@ import { PregledMaticneKnjigeRodjenihComponent } from './pregled-maticne-knjige-
   providers: [NewsService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { }import { analyzeNgModules } from '@angular/compiler';
+

@@ -40,6 +40,7 @@ import { PrikazUgovoraNotarComponent } from './prikaz-ugovora-notar/prikaz-ugovo
 import { PrikazTerminaNotarComponent } from './prikaz-termina-notar/prikaz-termina-notar.component';
 import { MaticarProfileComponent } from './maticar-profile/maticar-profile.component';
 import { PregledMaticneKnjigeRodjenihComponent } from './pregled-maticne-knjige-rodjenih/pregled-maticne-knjige-rodjenih.component';
+import { GradjaninNotarZakazivanjeComponent } from './gradjanin-notar-zakazivanje/gradjanin-notar-zakazivanje.component';
 
 
 const routes: Routes = [
@@ -82,7 +83,7 @@ const routes: Routes = [
   {path: 'prikaz-termina-notar', component: PrikazTerminaNotarComponent},
   {path: 'maticar-profile', component: MaticarProfileComponent},
   {path: 'pregled-maticne-knjige-rodjenih', component: PregledMaticneKnjigeRodjenihComponent},
-
+  {path: 'gradjanin-notar-zakazivanje', component: GradjaninNotarZakazivanjeComponent},
 
   {path: '404', component: NotFoundComponent},
   {path: '**', redirectTo: '404'},
