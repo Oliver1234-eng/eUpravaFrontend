@@ -14,13 +14,12 @@ export class PrikazUgovoraNotarComponent implements OnInit {
   constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
-    this.http.get<any>('http://localhost:8080/api/ugovor/all/').subscribe(
+    this.http.get<any>('http://localhost:8080/api/notar/ugovori').subscribe(
       data => {
         this.ugovori = data;
-        console.log(data)
       },
       error => {
-        console.error(error); 
+        console.error(error);
       }
     );
   }

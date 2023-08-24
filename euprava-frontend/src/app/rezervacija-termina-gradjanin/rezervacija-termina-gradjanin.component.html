@@ -21,44 +21,16 @@
   <div class="card mx-auto mt-5" style="width: 400px;">
     <div class="card-body">
       <h2 class="card-title text-center">Rezervacija termina</h2>
-
-
-
-     
       <form (ngSubmit)="azurirajTermin()" #azuriranjeForm="ngForm">
-
         <div class="form-group">
-          <label for="id">Odaberi termin:</label> <br>
-          <mat-form-field>
-            <mat-label>Termini</mat-label>
-            <mat-select name="termin" required class="form-control" [(ngModel)]="azuriranjeTermina.id">
-              <mat-option *ngFor="let termin of termini" [value]="termin.id">
-                {{termin.datumIvremeSastanka}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-          </div>
-
-        <div class="form-group">
-          <label for="jmbgGradjanina">Vaš JMBG:</label>
-          <input type="text" id="idGradjanina" name="idGradjanina" [(ngModel)]="azuriranjeTermina.idGradjanina" required class="form-control">
+          <label for="id">ID termina:</label>
+          <input type="text" id="id" name="id" [(ngModel)]="azuriranjeTermina.id" required class="form-control">
         </div>
         <div class="form-group">
-          <label for="id">Odaberi vrstu ugovora:</label> <br>
-          <mat-form-field>
-            <mat-label>Vrste</mat-label>
-            <mat-select  name="vrstaUgovora" required class="form-control" [(ngModel)]="azuriranjeTermina.vrstaUgovora">
-              <mat-option *ngFor="let vrsta of vrsteUgovora" [value]="vrsta.name">
-                {{vrsta.name}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-          </div>
-        <!-- <div class="form-group">
           <label for="jmbgGradjanina">Vaš JMBG:</label>
           <input type="text" id="jmbgGradjanina" name="jmbgGradjanina" [(ngModel)]="azuriranjeTermina.jmbgGradjanina" required class="form-control">
-        </div> -->
-        <!-- <div class="form-group">
+        </div>
+        <div class="form-group">
           <label for="imeIPrezimeGradjanina">Vaše ime i prezime:</label>
           <input type="text" id="imeIPrezimeGradjanina" name="imeIPrezimeGradjanina" [(ngModel)]="azuriranjeTermina.imeIPrezimeGradjanina" required class="form-control">
         </div>
@@ -77,7 +49,7 @@
         <div class="form-group">
           <label for="srodstvo">Vaše srodstvo sa sadašnjim vlasnikom:</label>
           <input type="text" id="srodstvo" name="srodstvo" [(ngModel)]="azuriranjeTermina.srodstvo" required class="form-control">
-        </div> -->
+        </div>
         
         <button type="submit" class="btn btn-primary">Rezerviši termin</button>
       </form>

@@ -26,59 +26,35 @@
         </div>
         <div class="card-body">
           <form (ngSubmit)="dodajUgovor()" #nepokretnostForm="ngForm">
-            
-            
             <div class="form-group">
-              <label for="id">Odaberi termin:</label> <br>
-              <mat-form-field>
-                <mat-label>Termini</mat-label>
-                <mat-select name="termin" required class="form-control" [(ngModel)]="ugovor.termin">
-                  <mat-option *ngFor="let termin of termini" [value]="termin">
-                    {{termin.datumIvremeSastanka}}
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
-              </div>
-            
-            <div class="form-group" *ngIf="ugovor.termin!=null">
               <label for="notar">Ime i prezime notara:</label>
-              <input type="text" id="notar" name="notar" [(ngModel)]="ugovor.termin.notar.ime +' '+ ugovor.termin.notar.prezime" required class="form-control" readonly>
+              <input type="text" id="notar" name="notar" [(ngModel)]="ugovor.notar" required class="form-control" readonly>
             </div>
-            <div class="form-group" *ngIf="ugovor.termin!=null" >
+            <div class="form-group">
               <label for="vrstaUgovora">Vrsta ugovora:</label>
-              <input type="text" id="vrstaUgovora" name="vrstaUgovora" [(ngModel)]="ugovor.termin.vrstaUgovora" required class="form-control">
+              <input type="text" id="vrstaUgovora" name="vrstaUgovora" [(ngModel)]="ugovor.vrstaUgovora" required class="form-control" readonly>
             </div>
-            <div class="form-group" *ngIf="ugovor.termin!=null">
-              <label for="datumOvere">Datum overe:</label>
-              <input type="text" id="datumOvere" name="datumOvere" [(ngModel)]="ugovor.termin.datumIvremeSastanka" required class="form-control">
+            <div class="form-group">
+              <label for="datumOvere">Datum overe (format dd.MM.gggg):</label>
+              <input type="text" id="datumOvere" name="datumOvere" [(ngModel)]="ugovor.datumOvere" required class="form-control">
             </div>
-
-            <div class="form-group" *ngIf="ugovor.termin?.vrstaUgovora=='OVERA_NEPOKRETNOSTI'">
+            <div class="form-group">
+              <label for="overen">Da li je ugovor overen (da/ne):</label>
+              <input type="text" id="overen" name="overen" [(ngModel)]="ugovor.overen" required class="form-control" readonly>
+            </div>
+            <div class="form-group">
               <label for="brojParcele">Broj parcele:</label>
               <input type="text" id="brojParcele" name="brojParcele" [(ngModel)]="ugovor.brojParcele" required class="form-control">
             </div>
-
-            <button class="btn btn-primary" *ngIf="ugovor.termin?.vrstaUgovora=='OVERA_NEPOKRETNOSTI'" (click)="openNewTab()">Pretraži parcele iz katastra</button>
-            <div class="form-group" *ngIf="ugovor.termin?.vrstaUgovora=='OVERA_NEPOKRETNOSTI'" >
-              <label for="stariVlasnik">Stari vlasnik JMBG:</label>
-              <input type="text" id="stariVlasnik" name="stariVlasnik" [(ngModel)]="ugovor.stariVlasnik">
+            <button class="btn btn-primary" (click)="openNewTab()">Pretraži parcele iz katastra</button>
+            <div class="form-group">
+              <label for="stariVlasnik">Stari vlasnik parcele:</label>
+              <input type="text" id="stariVlasnik" name="stariVlasnik" [(ngModel)]="ugovor.stariVlasnik" required class="form-control">
             </div>
-
-            <div class="form-group" *ngIf="ugovor.termin?.vrstaUgovora=='OVERA_NEPOKRETNOSTI'">
-              <label for="noviVlasnik">Novi vlasnik JMBG:</label>
-              <input type="text" id="noviVlasnik" name="noviVlasnik" [(ngModel)]="ugovor.noviVlasnik" >
+            <div class="form-group">
+              <label for="noviVlasnik">Novi vlasnik parcele:</label>
+              <input type="text" id="noviVlasnik" name="noviVlasnik" [(ngModel)]="ugovor.noviVlasnik" required class="form-control">
             </div>
-
-            <div class="form-group" *ngIf="ugovor.termin?.vrstaUgovora=='OVERA_POTPISA'">
-              <label for="potpis">Novi potpis:</label>
-              <input type="text" id="potpis" name="potpis" [(ngModel)]="ugovor.potpis" >
-            </div>
-
-            <div class="form-group" *ngIf="ugovor.termin?.vrstaUgovora=='OVERA_DOKUMENTA'">
-              <label for="dokument">Dokument:</label>
-              <input type="text" id="dokument" name="dokument" [(ngModel)]="ugovor.dokument" >
-            </div>
-
             <button class="btn btn-primary" (click)="openNewTab2()">Pretraži korisnike u matičnoj knjizi rođenih</button>
             <button class="btn btn-primary" (click)="openNewTab3()">Pretraži korisnike u matičnoj knjizi venčanih</button>
             <button class="btn btn-primary" (click)="openNewTab4()">Pretraži korisnike u matičnoj knjizi umrlih</button>
