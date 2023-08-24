@@ -27,25 +27,24 @@
             <th>ID</th>
             <th>Datum i vreme</th>
             <th>Ime i prezime notara</th>
+            <th>Kancelarija</th>
+            <th>Vrsta ugovora</th>
+            <th>Status termina</th>
             <th>JMBG građanina</th>
             <th>Ime i prezime građanina</th>
-            <th>Broj parcele</th>
-            <th>JMBG vlasnika</th>
-            <th>Ime i prezime vlasnika</th>
-            <th>Srodstvo sa vlasnikom</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let termin of termini">
             <td>{{ termin.id }}</td>
-            <td>{{ termin.datumIVremeSastanka }}</td>
-            <td>{{ termin.imeIPrezimeNotara }}</td>
-            <td>{{ termin.jmbgGradjanina }}</td>
-            <td>{{ termin.imeIPrezimeGradjanina }}</td>
-            <td>{{ termin.brojParcele }}</td>
-            <td>{{ termin.jmbgVlasnika }}</td>
-            <td>{{ termin.imeIPrezimeVlasnika }}</td>
-            <td>{{ termin.srodstvo }}</td>
+            <td>{{ termin.datumIvremeSastanka }}</td>
+            <td>{{termin.notar.ime}}<br>{{termin.notar.prezime}}</td>
+            <td>{{termin.kancelarija.id}}</td>
+            <td>{{termin.vrstaUgovora}}</td>
+            <td>{{ termin.statusTermina }}</td>
+            <td>{{ termin.stranka?.jmbg}}</td>
+            <td>{{termin.stranka?.ime}}<br>{{termin.stranka?.prezime}}</td>
+
           </tr>
         </tbody>
       </table>
